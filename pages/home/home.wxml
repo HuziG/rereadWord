@@ -1,0 +1,16 @@
+<!--pages/home/home.wxml-->
+<nav-cmp mode="0"/>
+
+<search-cmp />
+
+<welcome-cmp />
+
+<mode-cmp />
+
+<rember-info-cmp />
+
+<view class="study-wrapper">
+  <van-button round type="danger" custom-class="defined-btn" bind:tap="toStudy">
+    开始背单词吧
+  </van-button>
+</view>

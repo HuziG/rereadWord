@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mode/mode",
+    "pages/home/home",
+    "pages/user/user",
+    "pages/study/study",
+    "pages/test/test"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "tabBar": {
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "selectedColor": "#FF3B1D",
+    "color": "#666666",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "static/img/home@unselect.png",
+        "selectedIconPath": "static/img/home@select.png",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/img/user@unselect.png",
+        "selectedIconPath": "static/img/user@select.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "sdkPlugin": {
+      "version": "1.16.0",
+      "provider": "wxc6b86e382a1e3294"
+     }
+ }
+}

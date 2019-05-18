@@ -1,0 +1,5 @@
+<!--components/home/search/index.wxml-->
+<view class="search-wrapper">
+  <view class="iconfont icon-search"></view>
+  <input placeholder="输入你想搜索的单词......"></input>
+</view>

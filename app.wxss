@@ -1,0 +1,22 @@
+/**app.wxss**/
+.main-container{
+  padding: 0 50rpx;
+}
+.flex-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.defined-btn{
+  background-color: #FF3B1D !important;
+  border: none;
+}
+
+.iconfont:active{
+  opacity: .5 !important;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nav-cmp": "/components/nav/index",
+    "mode-cmp": "/components/mode/index"
+  }
+}

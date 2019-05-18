@@ -1,0 +1,12 @@
+<!--components/home/rember-info/index.wxml-->
+<view class="container">
+  <view class="item">
+    <view class="num">20</view>
+    <view class="des">已记单词</view>
+  </view>
+
+  <view class="item">
+    <view class="num">0</view>
+    <view class="des">剩余单词</view>
+  </view>
+</view>

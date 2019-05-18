@@ -1,0 +1,16 @@
+/* components/auth/index.wxss */
+@import "../../app.wxss";
+
+.container{
+  margin-top: 130rpx;
+  text-align: center;
+}
+.defind-btn{
+  width: 400rpx;
+}
+.des{
+  margin-top: 15rpx;
+  text-align: center;
+  font-size: 9pt;
+  color: #919392;
+}

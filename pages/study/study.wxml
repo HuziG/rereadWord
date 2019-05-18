@@ -1,0 +1,12 @@
+<!--pages/study/study.wxml-->
+<nav-cmp mode="2" title="学习模式"/>
+
+<van-progress 
+  percentage="5" 
+  color="#FF3B1D" 
+  show-pivot="{{false}}" 
+  custom-class="van-progress"
+/>
+
+<explain-info-cmp word="" show=""/>
+

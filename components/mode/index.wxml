@@ -1,0 +1,9 @@
+<!--components/mode/index.wxml-->
+<view class="container">
+  <view class="mode-item" data-mode="cet4">四级词库</view>
+  <view class="mode-item" data-mode="cet4_import">四级重点词库</view>
+  <view class="mode-item" data-mode="cet6">六级词库</view>
+  <view class="mode-item" data-mode="cet6_import">六级重点词库</view>
+  <view class="mode-item" data-mode="kaoyan">考研词库</view>
+  <view class="mode-item" data-mode="kaoyan_import">考研重点词库</view>
+</view>

@@ -1,0 +1,14 @@
+<!--components/auth/index.wxml-->
+<view class="container">
+  <van-button round 
+    custom-class="defined-btn"
+    type="danger" 
+    loading="{{loading}}" 
+    disabled="{{loading}}">
+    <text wx:if="{{loading===false}}">快速授权使用</text>
+  </van-button>
+
+  <view class="des">
+    *我们将使用您的手机号，进行快速注册
+  </view>
+</view>

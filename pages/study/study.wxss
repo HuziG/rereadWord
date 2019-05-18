@@ -1,0 +1,4 @@
+/* pages/study/study.wxss */
+.van-progress{
+  border-radius: 0px !important;
+}

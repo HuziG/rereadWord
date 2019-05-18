@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-button": "/static/vant-weapp/button/index",
+    "nav-cmp": "/components/nav/index",
+    "search-cmp": "/components/home/search/index",
+    "mode-cmp": "/components/home/mode/index",
+    "rember-info-cmp": "/components/home/rember-info/index",
+    "welcome-cmp": "/components/home/welcome/index"
+  }
+}

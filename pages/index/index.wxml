@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<nav-cmp mode="0"/>
+
+<view class="flex-container">
+  <view class="title-wrapper">
+    <view class="title-word">欢迎来到，单词复读机</view>
+    <view class="title-des">——人类的本质就是复读机</view>
+  </view>
+
+  <auth-cmp loading="{{false}}"/>
+
+  <view class="footer">
+    登录代表您已经同意
+    <view class="a">《单词复读机用户协议》</view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<!--components/nav/index.wxml-->
+<view class="main-container" style="padding-top: {{barHeight}}px;">
+  <view wx:if="{{mode === 0}}"></view>
+
+  <view class="flex-wrapper" wx:if="{{mode === 1}}">
+    <view class="title">{{title}}</view>
+  </view>
+
+  <view class="flex-wrapper" wx:if="{{mode === 2}}">
+    <view class="iconfont icon-arrowleft" bind:tap="backTo"></view>
+    <view class="title">{{title}}</view>
+  </view>
+</view>
+
+<view style="height:{{barHeight + 45}}px;"></view>
+

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "auth-cmp": "/components/auth/index",
+    "nav-cmp": "/components/nav/index"
+  }
+}

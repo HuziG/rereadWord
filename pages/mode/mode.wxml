@@ -1,0 +1,4 @@
+<!--pages/mode/mode.wxml-->
+<nav-cmp mode="1" title="选择词库"/>
+
+<mode-cmp />

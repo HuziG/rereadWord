@@ -1,0 +1,2 @@
+<!--pages/test/test.wxml-->
+<button bind:tap="play">play</button>

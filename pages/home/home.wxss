@@ -1,0 +1,8 @@
+/* pages/home/home.wxss */
+page{
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.study-wrapper{
+  text-align: center;
+}

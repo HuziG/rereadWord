@@ -1,0 +1,20 @@
+/* components/home/rember-info/index.wxss */
+.container{
+  display: flex;
+  justify-content: space-around;
+  padding: 5vh 0;
+}
+.item{
+  flex: 1;
+  text-align: center;
+}
+.num{
+  font-size: 60rpx;
+  line-height: 60rpx;
+  color: #333333;
+  font-weight: 700;
+}
+.des{
+  color: #666666;
+  font-size: 11pt;
+}

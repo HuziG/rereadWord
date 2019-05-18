@@ -1,0 +1,32 @@
+/**index.wxss**/
+.main-container{
+  padding-top: 100rpx;
+}
+.title-wrapper{
+  display: inline-block;
+  text-align: right;
+}
+.title-word{
+  display: inline;
+  font-size: 20pt;
+}
+.title-des{
+  color: #919392;
+  font-size: 12pt;
+  padding-bottom: 10rpx; 
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  padding: 15rpx 0;
+  width: 100%;
+  text-align: center;
+  font-size: 9pt;
+}
+.a{
+  display: inline;
+  color: #FF3B1D;
+}
+.a:active{
+  opacity: .5;
+}

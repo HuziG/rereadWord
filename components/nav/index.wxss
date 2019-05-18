@@ -1,0 +1,26 @@
+/* components/nav/index.wxss */
+@import "../../utils/iconfont.wxss";
+@import "../../app.wxss";
+
+.flex-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.main-container{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90rpx;
+  color: #666666;
+}
+.iconfont{
+  display: inline;
+  font-size: 20pt !important;
+  margin-right: 60rpx;
+}
+.title{
+  font-size: 14pt;
+}
