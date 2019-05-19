@@ -1,15 +1,30 @@
 // components/study/explain/index.js
 Component({
   properties: {
-    word: String,
-    show: Boolean
+    wordInfo: Object,
+    show: {
+      type: Boolean,
+      value: false
+    }
   },
 
   data: {
 
   },
 
-  methods: {
+  observers: {
+    'wordInfo': function (wordInfo) {
+      this.renderWordInfo(wordInfo)
+    }
+  },
 
+  methods: {
+    playVoice() {
+
+    },
+
+    renderWordInfo(wordInfo) {
+      
+    }
   }
 })

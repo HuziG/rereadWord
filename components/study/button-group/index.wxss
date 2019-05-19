@@ -1,1 +1,25 @@
 /* components/study/button-group/index.wxss */
+@import "../button.wxss";
+
+.known{
+  background-color: #07C160;
+}
+.pre,.next{
+  color: #333333;
+}
+.mood-btn-group{
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

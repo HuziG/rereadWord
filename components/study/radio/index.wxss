@@ -1,1 +1,3 @@
 /* components/study/radio/index.wxss */
+@import "../../../utils/iconfont.wxss";
+@import "../button.wxss";

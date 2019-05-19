@@ -1,5 +1,5 @@
 <!--pages/study/study.wxml-->
-<nav-cmp mode="2" title="学习模式"/>
+<nav-cmp mode="2" title="学习模式" />
 
 <van-progress 
   percentage="5" 
@@ -8,5 +8,12 @@
   custom-class="van-progress"
 />
 
-<explain-info-cmp word="" show=""/>
+<explain-info-cmp wordInfo="" show="{{false}}" />
+
+<view class="button-group">
+  <button-group-cmp wordIndex="" >
+    <voice-cmp word="" zn="" play="" />
+  </button-group-cmp>
+</view>
+
 

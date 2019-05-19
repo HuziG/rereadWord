@@ -2,3 +2,10 @@
 .van-progress{
   border-radius: 0px !important;
 }
+.button-group{
+  position: fixed;
+  background-color: #fff;
+  bottom: 50rpx;
+  left: 0;
+  width: 100%;
+}

@@ -15,16 +15,21 @@ Page({
   data: {},
 
   onLoad() {
-    this.getVoice('cat')
+    // this.getVoice('cat')
+
+    this.getExample(1521)
   },
 
   getVoice(word) {
+
+    return
+
     getZn(word).then(creatVoice).then(playVoice)
 
     function getZn(word) {
       return new Promise((resolve, reject) => {
         wx.request({
-          url: `https://api.shanbay.com/bdc/search/?word=${word}`, // 仅为示例，并非真实的接口地址
+          url: `https://api.shanbay.com/bdc/search/?word=${word}`, 
           header: {
             'content-type': 'application/json' // 默认值
           },
@@ -77,18 +82,18 @@ Page({
   //   })
   // }
 
-  // getExample(id) {
-  //   return new Promise((resolve, reject) => {
-  //     wx.request({
-  //       url: `https://api.shanbay.com/bdc/example/?vocabulary_id=${id}`, // 仅为示例，并非真实的接口地址
-  //       data: {},
-  //       header: {
-  //         'content-type': 'application/json' // 默认值
-  //       },
-  //       success(res) {
-  //         resolve(res.data.data)
-  //       }
-  //     })
-  //   })
-  // }
+  getExample(id) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `https://api.shanbay.com/bdc/example/?vocabulary_id=${id}`, // 仅为示例，并非真实的接口地址
+        data: {},
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          resolve(res.data.data)
+        }
+      })
+    })
+  }
 })

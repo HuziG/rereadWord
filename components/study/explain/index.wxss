@@ -1,1 +1,43 @@
 /* components/study/explain/index.wxss */
+@import "../../../utils/iconfont.wxss";
+
+.container{
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30rpx;
+}
+.word{
+  font-size: 20pt;
+}
+.sound{
+  font-size: 10pt;
+  color: #999999;
+  line-height: 60rpx;
+}
+.icon-sound-fill{
+  font-size: 16pt;
+  color: #FD0102;
+}
+vocab{
+  color: #FD0102;
+  font-weight: 700;
+}
+.item{
+  padding-top: 50rpx;
+}
+.title{
+  font-size: 10pt;
+  color: #999999;
+}
+.content{
+  font-size: 14pt;
+}
+
+.icon-sound-fill:active{
+  opacity: .5;
+}

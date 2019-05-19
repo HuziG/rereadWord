@@ -1,0 +1,22 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 34rpx;
+}
+.btn-wrapper{
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  border-radius: 10em;
+  box-shadow: 1px 1px 10px 1px rgba(170, 170, 170, 1);
+  font-size: 11pt;
+  color: #fff;
+}
+.notice{
+  background-color: #FF3B1D;
+}
+
+.btn-wrapper:active{
+  opacity: .5;
+}

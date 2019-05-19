@@ -1,2 +1,31 @@
 <!--components/study/explain/index.wxml-->
-<text>components/study/explain/index.wxml</text>
+<view class="container">
+
+  <view class="header">
+    <view>
+      <view class="word">dog</view>
+      <view class="sound">/音标/</view>
+    </view>
+    <view>
+      <view class="iconfont icon-sound-fill" bind:tap="playVoice"></view>
+    </view>
+  </view>
+
+  <view wx:if="{{show}}">
+    <view class="item">
+      <view class="title">例句</view>
+      <view class="content">This is a <vocab>dog</vocab></view>
+    </view>
+
+    <view class="item">
+      <view class="title">英文释义</view>
+      <view class="content">dog dog dog</view>
+    </view>
+
+    <view class="item">
+      <view class="title">中文释义</view>
+      <view class="content">狗</view>
+    </view>
+  </view>
+
+</view>
