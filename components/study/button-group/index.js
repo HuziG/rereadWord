@@ -1,11 +1,26 @@
 // components/study/button-group/index.js
+
 Component({
   properties: {
-
+    wordIndex: Number
   },
 
   data: {
     mood: 1
+  },
+
+  observers: {
+    'wordIndex': function (value) {
+      if (value === 0) {
+        this.setData({
+          preBtnShow: false
+        })
+      } else {
+        this.setData({
+          preBtnShow: true
+        })
+      }
+    }
   },
 
   methods: {

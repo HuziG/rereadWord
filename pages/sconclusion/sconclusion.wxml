@@ -1,0 +1,10 @@
+<!--pages/sconclusion/sconclusion.wxml-->
+<nav-cmp mode="1" title="小结界面" />
+
+<conclusion-cmp />
+
+<view style="height:130rpx;"></view>
+
+<view class="bottom-button">
+  <next-cmp />
+</view>

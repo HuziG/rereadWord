@@ -5,6 +5,7 @@
     "pages/home/home",
     "pages/user/user",
     "pages/study/study",
+    "pages/sconclusion/sconclusion",
     "pages/test/test"
   ],
   "window": {

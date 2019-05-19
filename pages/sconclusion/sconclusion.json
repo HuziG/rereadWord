@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav-cmp": "/components/nav/index",
+    "conclusion-cmp": "/components/study/conclusion/index",
+    "next-cmp": "/components/study/button-conclusion/index"
+  }
+}

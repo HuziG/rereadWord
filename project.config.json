@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -74,6 +74,13 @@
 					"id": -1,
 					"name": "study",
 					"pathName": "pages/study/study",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "sconclusion",
+					"pathName": "pages/sconclusion/sconclusion",
 					"scene": null
 				}
 			]

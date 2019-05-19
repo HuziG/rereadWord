@@ -1,0 +1,16 @@
+/* components/study/conclusion/index.wxss */
+.container{
+  padding: 0 40rpx;
+  border-top: 1px solid #666666;
+}
+.word-item{
+  padding: 15rpx 0rpx;
+  border-bottom: 1px dashed #666666;
+}
+.word{
+  font-size: 16pt;
+}
+.zn{
+  font-size: 10pt;
+  color: #666666;
+}

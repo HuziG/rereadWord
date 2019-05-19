@@ -1,0 +1,18 @@
+/* components/study/button-conclusion/index.wxss */
+@import "../button.wxss";
+
+.defined-btn{
+  border-radius: 10em !important;
+  color: #fff;
+  width: 80vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 11pt;
+  box-shadow: 1px 1px 10px 1px rgba(170, 170, 170, 1);
+}
+.defined-btn::after{
+  border: none !important;
+}
+.defined-btn:active{
+  opacity: .5;
+}

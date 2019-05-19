@@ -1,0 +1,9 @@
+/* pages/sconclusion/sconclusion.wxss */
+.bottom-button{
+  position: fixed;
+  background-color: #fff;
+  bottom: 50rpx;
+  left: 0;
+  width: 100%;
+}
+  

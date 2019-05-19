@@ -1,0 +1,9 @@
+<!--components/study/conclusion/index.wxml-->
+<view class="container">
+  <block wx:for="{{wordArr}}" wx:key="*this">
+    <view class="word-item">
+      <view class="word">{{item.word}}</view>
+      <view class="zn">{{item.zn}}</view>
+    </view>
+  </block>
+</view>

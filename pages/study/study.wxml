@@ -10,6 +10,8 @@
 
 <explain-info-cmp wordInfo="" show="{{false}}" />
 
+<view style="height:130rpx;"></view>
+
 <view class="button-group">
   <button-group-cmp wordIndex="" >
     <voice-cmp word="" zn="" play="" />
