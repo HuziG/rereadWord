@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "van-button": "/static/vant-weapp/button/index",
+    "van-popup": "/static/vant-weapp/popup/index",
     "nav-cmp": "/components/nav/index",
+    "poster-cmp": "/components/home/poster/index",
     "search-cmp": "/components/home/search/index",
     "mode-cmp": "/components/home/mode/index",
     "rember-info-cmp": "/components/home/rember-info/index",

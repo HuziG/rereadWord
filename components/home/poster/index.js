@@ -1,4 +1,4 @@
-// components/conclusion/poster/index.js
+// components/home/poster/index.js
 Component({
   properties: {
 
@@ -9,11 +9,11 @@ Component({
   },
 
   attached() {
-    this.draw('2019.2', '5', 10)
+    this.draw('2019.2', '5', 4396)
   },
 
   methods: {
-    draw(date, day, dayNum) {
+    draw(date, day, wordNum) {
       var ctx = wx.createCanvasContext('customCanvas', this)
 
       let dateTextDis = ctx.measureText(date).width > 37 ? 22 : 27
@@ -35,17 +35,15 @@ Component({
 
       ctx.setTextAlign('center')
       ctx.setFontSize(34)
-      ctx.fillText('我', 150, 120)
+      ctx.fillText('我', 150, 130)
       ctx.setFontSize(16)
-      ctx.fillText('已累计记单词', 150, 165)
+      ctx.fillText('已记完所有单词', 150, 180)
       ctx.setFontSize(34)
-      ctx.fillText(dayNum, 150, 220)
-      ctx.setFontSize(26)
-      ctx.fillText('天', 150, 270)
+      ctx.fillText(`共计${wordNum}个`, 150, 240)
 
       ctx.setFillStyle('white')
       ctx.fillRect(5, 305, 270, 90)
-      
+
       ctx.drawImage('/static/img/qd.jpg', 190, 310, 80, 80)
 
       ctx.setFillStyle('#000')
@@ -56,8 +54,8 @@ Component({
       ctx.draw()
     },
 
-    homeTo() {
-      
+    modeTo() {
+
     }
   }
 })

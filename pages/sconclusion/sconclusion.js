@@ -2,7 +2,7 @@
 Page({
 
   data: {
-    showPoster: true
+    showPoster: false
   },
 
   onLoad: function (options) {

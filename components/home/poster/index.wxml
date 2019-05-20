@@ -1,8 +1,8 @@
-<!--components/conclusion/poster/index.wxml-->
+<!--components/home/poster/index.wxml-->
 <canvas canvas-id="customCanvas" style="width:280px;height:400px"></canvas>
 
 <view class="bottom-text">图片已保存到相册，可分享给好友</view>
 
-<view class="next-btn" bind:tap="homeTo">
+<view class="next-btn" bind:tap="modeTo">
   下一步
 </view>

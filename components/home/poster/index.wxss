@@ -1,4 +1,4 @@
-/* components/conclusion/poster/index.wxss */
+/* components/home/poster/index.wxss */
 .bottom-text{
   text-align: center;
   font-size: 10pt;

@@ -5,7 +5,7 @@
 
 <view style="height:130rpx;"></view>
 
-<van-popup show="{{ showPoster }}" bind:close="onClose">
+<van-popup custom-class="posterPop" show="{{ showPoster }}" bind:close="onClose">
   <poster-cmp />
 </van-popup>
 

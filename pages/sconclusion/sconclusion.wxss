@@ -6,4 +6,7 @@
   left: 0;
   width: 100%;
 }
+.posterPop{
+  background-color: transparent !important;
+}
   

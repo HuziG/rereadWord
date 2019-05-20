@@ -6,3 +6,6 @@ page{
 .study-wrapper{
   text-align: center;
 }
+.posterPop{
+  background-color: transparent !important;
+}
