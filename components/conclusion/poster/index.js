@@ -50,8 +50,8 @@ Component({
 
       ctx.setFillStyle('#000')
       ctx.setFontSize(14)
-      ctx.fillText('记单词软件哪家强?', 75, 335)
-      ctx.fillText('扫一扫，了解下~', 70, 380)
+      ctx.fillText('记单词软件哪家强?', 75, 345)
+      ctx.fillText('扫一扫，了解下~', 70, 370)
 
       ctx.draw()
     }
