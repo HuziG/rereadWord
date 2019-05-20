@@ -5,6 +5,10 @@
 
 <view style="height:130rpx;"></view>
 
+<van-popup show="{{ showPoster }}" bind:close="onClose">
+  <poster-cmp />
+</van-popup>
+
 <view class="bottom-button">
   <next-cmp />
 </view>

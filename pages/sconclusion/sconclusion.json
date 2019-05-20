@@ -1,7 +1,9 @@
 {
   "usingComponents": {
+    "van-popup": "/static/vant-weapp/popup/index",
     "nav-cmp": "/components/nav/index",
-    "conclusion-cmp": "/components/study/conclusion/index",
-    "next-cmp": "/components/study/button-conclusion/index"
+    "conclusion-cmp": "/components/conclusion/conclusion/index",
+    "next-cmp": "/components/conclusion/button-conclusion/index",
+    "poster-cmp": "/components/conclusion/poster/index"
   }
 }

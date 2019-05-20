@@ -1,0 +1,2 @@
+<!--components/conclusion/poster/index.wxml-->
+<canvas canvas-id="customCanvas" style="width:280px;height:400px"></canvas>

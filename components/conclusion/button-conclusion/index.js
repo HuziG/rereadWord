@@ -7,7 +7,8 @@ Component({
   data: {
     second: 15,
     disalbed: true,
-    nextShow: false
+    nextShow: false,
+    loading: false
   },
 
   attached() {
@@ -35,6 +36,9 @@ Component({
     },
 
     nextPage() {
+      if (this.data.disalbed) {
+        return
+      }
       console.log('next')
     }
   }

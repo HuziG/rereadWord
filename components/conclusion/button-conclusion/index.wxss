@@ -1,6 +1,11 @@
 /* components/study/button-conclusion/index.wxss */
-@import "../button.wxss";
-
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 34rpx;
+}
 .defined-btn{
   border-radius: 10em !important;
   color: #fff;
@@ -9,10 +14,4 @@
   line-height: 80rpx;
   font-size: 11pt;
   box-shadow: 1px 1px 10px 1px rgba(170, 170, 170, 1);
-}
-.defined-btn::after{
-  border: none !important;
-}
-.defined-btn:active{
-  opacity: .5;
 }

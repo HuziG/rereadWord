@@ -10,7 +10,7 @@ Component({
 
   observers: {
     'play': function (play) {
-      if (play === false) {
+      if (!play) {
         this.stop()
       } else {
         this.play()
