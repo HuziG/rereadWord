@@ -1,9 +1,11 @@
 <!--components/auth/index.wxml-->
 <view class="container">
   <van-button round 
+    bindgetphonenumber="getPhoneNumber"
     custom-class="defined-btn"
     type="danger" 
     loading="{{loading}}" 
+    open-type="getPhoneNumber"
     disabled="{{loading}}">
     <text wx:if="{{loading===false}}">快速授权使用</text>
   </van-button>

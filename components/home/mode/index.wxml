@@ -1,5 +1,5 @@
 <!--components/home/mode/index.wxml-->
 <view class="container">
-  <text class="mode-title">四级词库</text>
-  <view class="change-mode-btn">修改计划</view>
+  <text class="mode-title">{{mode}}</text>
+  <view class="change-mode-btn" bind:tap="modeTo">修改计划</view>
 </view>

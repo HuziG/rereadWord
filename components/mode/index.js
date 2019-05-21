@@ -1,23 +1,43 @@
 // components/mode/index.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
-
+    
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
-
+    modeArr: [
+      {
+        name: '四级词库',
+        key: 'cet4'
+      },
+      {
+        name: '四级重点词库',
+        key: 'cet4_import'
+      },
+      {
+        name: '六级词库',
+        key: 'cet6'
+      },
+      {
+        name: '六级重点词库',
+        key: 'cet6_import'
+      },
+      {
+        name: '考研词库',
+        key: 'kaoyan'
+      },
+      {
+        name: '考研重点词库',
+        key: 'kaoyan_import'
+      }
+    ]
   },
 
-  /**
-   * 组件的方法列表
-   */
   methods: {
-
+    choiceMode(e) {
+      this.triggerEvent('setMode', {
+        mode: e.currentTarget.dataset.mode
+      })
+    }
   }
 })

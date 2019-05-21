@@ -7,7 +7,7 @@
     <view class="title-des">——人类的本质就是复读机</view>
   </view>
 
-  <auth-cmp loading="{{false}}"/>
+  <auth-cmp loading="{{loading}}" bind:getPhoneNumber="getPhoneNumber"/>
 
   <view class="footer">
     登录代表您已经同意

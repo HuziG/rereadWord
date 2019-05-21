@@ -5,7 +5,7 @@
 
 <welcome-cmp />
 
-<mode-cmp />
+<mode-cmp mode="{{mode}}"/>
 
 <rember-info-cmp />
 

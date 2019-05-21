@@ -1,4 +1,10 @@
 <!--pages/mode/mode.wxml-->
-<nav-cmp mode="1" title="选择词库"/>
+<view wx:if="{{navMode === 0}}">
+  <nav-cmp mode="1" title="选择词库"/>
+</view>
 
-<mode-cmp />
+<view wx:if="{{navMode === 1}}">
+  <nav-cmp mode="2" title="选择词库"/>
+</view>
+
+<mode-cmp bind:setMode="setMode"/>

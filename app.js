@@ -10,7 +10,5 @@ App({
     wx.BaaS.init('2f607317e51c661c8f57')
   },
 
-  globalData: {
-    userInfo: null
-  }
+  globalData: {}
 })

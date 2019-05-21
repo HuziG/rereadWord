@@ -1,4 +1,6 @@
 // pages/home/home.js
+const App = new getApp()
+
 Page({
 
   data: {
@@ -6,7 +8,14 @@ Page({
   },
 
   onLoad: function (options) {
-    
+    this.init()
+  },
+
+  init() {
+    let mode = App.globalData['user_wordinfo'].mode
+    this.setData({
+      mode
+    })
   },
 
   toStudy() {
