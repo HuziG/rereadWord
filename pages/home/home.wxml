@@ -9,12 +9,12 @@
 
 <rember-info-cmp />
 
-<van-popup custom-class="posterPop" show="{{ showPoster }}" bind:close="onClose">
-  <poster-cmp />
-</van-popup>
-
 <view class="study-wrapper">
   <van-button round type="danger" custom-class="defined-btn" bind:tap="toStudy">
     开始背单词吧
   </van-button>
 </view>
+
+<van-popup custom-class="posterPop" show="{{showPoster}}">
+  <poster-cmp />
+</van-popup>

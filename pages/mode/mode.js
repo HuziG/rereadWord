@@ -13,6 +13,14 @@ Page({
     this.checkBackBtn(options)
   },
 
+  setMode(e) { // 设置mode
+    wordInfoModel.setWordMode(e.detail.mode).then(res => {
+      wx.switchTab({
+        url: '/pages/home/home'
+      })
+    })
+  },
+
   checkBackBtn(options) {
     if (options.frompage === 'homepage') {
       this.setData({
@@ -23,13 +31,5 @@ Page({
         navMode: 0
       })
     }
-  },
-
-  setMode(e) {
-    wordInfoModel.setWordMode(e.detail.mode).then(res => {
-      wx.switchTab({
-        url: '/pages/home/home'
-      })
-    })
   }
 })

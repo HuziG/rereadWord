@@ -16,8 +16,8 @@ Page({
     this.checkUserExist()
   },
 
-  checkUserExist() {
-    userModel.checkUserHandle().then(res => { // 用户存在检测
+  checkUserExist() { // 用户存在检测
+    userModel.checkUserHandle().then(res => { 
       this.setData({ loading: res })
 
       if (res) {
@@ -26,7 +26,7 @@ Page({
     })
   },
 
-  setWordInfoTable() {
+  setWordInfoTable() { // 用户已注册，设置user_wordinfo的表列数据
     wordInfoModel.getWordTableInfo().then(res => {
       App.globalData['user_wordinfo'] = res[0]
       if (res[0].mode === null) {
@@ -41,7 +41,7 @@ Page({
     })
   },
 
-  getPhoneNumber(e) {
+  getPhoneNumber(e) { // 授权，获取用户手机号
     this.setData({ loading: true })
 
     userModel.registerUser(e.detail.value).then(res => { // 用户注册

@@ -31,6 +31,8 @@ class WordInfoModel {
     let product = Product.getWithoutData(recordID)
 
     product.set('mode', mode)
+    product.set('startGroup', 0)
+    product.set('remWordNum', 0)
     return new Promise((resolve, reject) => {
       product.update().then(res => {
         resolve(true)
