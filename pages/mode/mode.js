@@ -21,7 +21,7 @@ Page({
     })
   },
 
-  checkBackBtn(options) {
+  checkBackBtn(options) { // 检测是否需要显示nav的返回按钮
     if (options.frompage === 'homepage') {
       this.setData({
         navMode: 1
