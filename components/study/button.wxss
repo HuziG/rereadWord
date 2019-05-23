@@ -8,8 +8,7 @@
 .btn-wrapper{
   background-color: #fff;
   padding: 20rpx 30rpx;
-  border-radius: 10em;
-  box-shadow: 1px 1px 10px 1px rgba(170, 170, 170, 1);
+  border-radius: 10rpx;
   font-size: 11pt;
   color: #fff;
 }

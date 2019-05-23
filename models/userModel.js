@@ -84,7 +84,6 @@ class UserModel {
     let apple = {
       openid,
       mode: null,
-      startGroup: 0,
       remWordNum: 0
     }
 

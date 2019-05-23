@@ -1,5 +1,31 @@
 <!--components/home/mode/index.wxml-->
 <view class="container">
-  <text class="mode-title">{{mode}}</text>
+  <text class="mode-title">{{modeFilter.getLevelName(mode)}}</text>
   <view class="change-mode-btn" bind:tap="modeTo">修改计划</view>
 </view>
+
+<wxs module="modeFilter">
+  var  getLevelName = function getLevelName(value) {
+    if (value ===  'cet4'){
+      return '四级词库'
+    }
+    if (value ===  'cet4_import'){
+      return '四级重点词库'
+    }
+    if (value ===  'cet6'){
+      return '六级词库'
+    }
+    if (value ===  'cet6_import'){
+      return '六级重点词库'
+    }
+    if (value ===  'kaoyan'){
+      return '考研词库'
+    }
+    if (value ===  'kaoyan_import'){
+      return '考研重点词库'
+    }
+  }
+  module.exports = {
+    getLevelName: getLevelName
+  }
+</wxs>

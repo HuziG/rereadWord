@@ -1,31 +1,57 @@
 <!--components/study/explain/index.wxml-->
+
 <view class="container">
 
   <view class="header">
     <view>
-      <view class="word">dog</view>
-      <view class="sound">/音标/</view>
+      <view class="word">{{word}}</view>
+      <view class="sound">/{{pron}}/</view>
     </view>
     <view>
       <view class="iconfont icon-sound-fill" bind:tap="playVoice"></view>
     </view>
   </view>
 
-  <view wx:if="{{show}}">
+  <view wx:if="{{explainShow}}">
     <view class="item">
       <view class="title">例句</view>
-      <view class="content">This is a <vocab>dog</vocab></view>
+      <block wx:for="{{wordSentence}}" wx:key="*this">
+        <view class="sentence-wrapper">
+          <rich-text class="content" nodes="{{filterAnnotation.getText(item.annotation)}}"></rich-text>
+          <view class="sentence-tran">{{item.translation}}</view>
+        </view>
+      </block>
     </view>
 
     <view class="item">
       <view class="title">英文释义</view>
-      <view class="content">dog dog dog</view>
+      <rich-text class="content" nodes="{{filterAnnotation.getBr(en_definition)}}"></rich-text>
     </view>
 
     <view class="item">
       <view class="title">中文释义</view>
-      <view class="content">狗</view>
+      <view class="content">{{definition}}</view>
     </view>
   </view>
 
 </view>
+
+<wxs module="filterAnnotation">
+var getText = function (value) {
+  var _value = value.replace("<vocab>","<span class='vocab'>")
+      _value = _value.replace("</vocab>","</span>")
+  return  _value
+}
+
+var getBr = function (value) {
+  while(value.indexOf(';') != -1) {
+    value =  value.replace(';'," ；<br />")
+  }
+  return value
+}
+
+module.exports = {
+    getText: getText,
+    getBr: getBr
+}
+</wxs>

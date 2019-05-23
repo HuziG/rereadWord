@@ -5,7 +5,7 @@ Component({
   },
 
   data: {
-   
+    
   },
 
   methods: {

@@ -1,21 +1,29 @@
 <!--pages/study/study.wxml-->
 <nav-cmp mode="2" title="学习模式" />
 
-<van-progress 
-  percentage="5" 
-  color="#FF3B1D" 
-  show-pivot="{{false}}" 
-  custom-class="van-progress"
-/>
+<view class="flex-container" wx:if="{{loading}}">
+  <image class="loading-img" src="/static/img/loading.gif" />
+</view>
 
-<explain-info-cmp wordInfo="" show="{{false}}" />
-
-<view style="height:130rpx;"></view>
-
-<view class="button-group">
-  <button-group-cmp wordIndex="" >
-    <voice-cmp word="" zn="" play="" />
-  </button-group-cmp>
+<view wx:if="{{!loading}}">
+  <view class="progress-wrapper">
+        <van-progress percentage="{{(wordIndex+1) * 5}}" color="#FF3B1D" show-pivot="{{false}}" custom-class="van-progress" />
+  </view>
+  
+  <explain-info-cmp id="explainCmp" wordCon="{{wordCon}}" explainShow="{{explainShow}}" />
+  
+  <view style="height:140rpx;"></view>
+  
+  <view class="button-group">
+    <button-group-cmp 
+      wordIndex="{{wordIndex}}" 
+      bind:unKnowHandle="unKnowHandle"
+      bind:knowHandle="knowHandle"
+      bind:nextHandle="nextHandle"
+      bind:preHandle="preHandle">
+      <voice-cmp word="" zn="" />
+    </button-group-cmp>
+  </view>
 </view>
 
 

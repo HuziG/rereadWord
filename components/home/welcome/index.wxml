@@ -1,2 +1,2 @@
 <!--components/home/welcome/index.wxml-->
-<view class="title">Good Morining</view>
+<view class="title">{{title}}</view>

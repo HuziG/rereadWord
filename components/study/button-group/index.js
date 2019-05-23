@@ -25,30 +25,24 @@ Component({
 
   methods: {
     unKnowHandle() {
-      this.btnShowHandle()
+      this.setData({
+        mood: this.data.mood === 1 ? 2 : 1
+      })
+      this.triggerEvent('unKnowHandle', {}, {})
     },
 
     knowHandle() {
-
+      this.triggerEvent('knowHandle', {}, {})
     },
 
     nextHandle() {
-      this.btnShowHandle()
+      this.setData({ mood: 1 })
+      this.triggerEvent('nextHandle', {}, {})
     },
 
     preHandle() {
-      this.btnShowHandle()
-    },
-
-    btnShowHandle() {
-      this.setData({
-        mood: this.data.mood === 1 ? 2 : 1
-      }) 
+      this.setData({ mood: 1 }) 
+      this.triggerEvent('preHandle', {}, {})
     }
   }
 })
-
-/**
- * 认识、下一个<button>：通知父页面 indexWord += 1
- * 不认识<button>：通知父页面，显示explain
- */

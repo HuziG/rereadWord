@@ -1,6 +1,9 @@
 <!--components/study/button-group/index.wxml-->
 <view class="mood-btn-group" wx:if="{{mood === 1}}">
   <view class="container">
+    <view wx:if="{{preBtnShow}}">
+      <view class="btn-wrapper pre" bind:tap="preHandle">上一个</view>
+    </view>
     <view class="btn-wrapper notice" bind:tap="unKnowHandle">不认识</view>
     <view class="btn-wrapper known" bind:tap="knowHandle">认识</view>
   </view>

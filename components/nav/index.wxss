@@ -15,6 +15,7 @@
   align-items: center;
   height: 90rpx;
   color: #666666;
+  background-color: #fff;
 }
 .iconfont{
   display: inline;

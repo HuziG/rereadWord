@@ -7,7 +7,7 @@
 
 <mode-cmp mode="{{mode}}"/>
 
-<rember-info-cmp />
+<rember-info-cmp  remWordNum="{{remWordNum}}" mode="{{mode}}"/>
 
 <view class="study-wrapper">
   <van-button round type="danger" custom-class="defined-btn" bind:tap="toStudy">

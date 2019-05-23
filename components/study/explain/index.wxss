@@ -1,5 +1,6 @@
 /* components/study/explain/index.wxss */
 @import "../../../utils/iconfont.wxss";
+@import "../../../app.wxss";
 
 .container{
   box-sizing: border-box;
@@ -15,15 +16,15 @@
   font-size: 20pt;
 }
 .sound{
-  font-size: 10pt;
-  color: #999999;
-  line-height: 60rpx;
+  font-size: 12pt;
+  color: #8E8B86;
+  line-height: 35rpx;
 }
 .icon-sound-fill{
   font-size: 16pt;
   color: #FD0102;
 }
-vocab{
+.vocab{
   color: #FD0102;
   font-weight: 700;
 }
@@ -35,7 +36,13 @@ vocab{
   color: #999999;
 }
 .content{
-  font-size: 14pt;
+  font-size: 12pt;
+}
+.sentence-wrapper{
+  padding: 15rpx 0;
+}
+.sentence-tran{
+  font-size: 11pt;
 }
 
 .icon-sound-fill:active{

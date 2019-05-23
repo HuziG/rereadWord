@@ -8,13 +8,18 @@ Page({
   },
 
   onLoad: function (options) {
+    
+  },
+
+  onShow() {
     this.init()
   },
 
   init() {
-    let mode = App.globalData['user_wordinfo'].mode
+    let user_wordinfo = App.globalData['user_wordinfo']
     this.setData({
-      mode
+      mode: user_wordinfo.mode,
+      remWordNum: user_wordinfo.remWordNum
     })
   },
 

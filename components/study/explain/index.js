@@ -1,30 +1,41 @@
 // components/study/explain/index.js
+import { StudyModel } from '../../../models/studyModel.js';
+
+const studyModel = new StudyModel()
+
 Component({
   properties: {
-    wordInfo: Object,
-    show: {
-      type: Boolean,
-      value: false
-    }
+    wordCon: Object,
+    explainShow: Boolean
   },
 
   data: {
-
+    wordSentence: []
   },
 
   observers: {
-    'wordInfo': function (wordInfo) {
-      this.renderWordInfo(wordInfo)
+    'wordCon': function (value) {
+      if (value === null) { return }
+
+      this.setData({
+        word: value.wordExplatin.content,
+
+        pron: value.wordExplatin.pron,
+        definition: value.wordExplatin.definition,
+        en_definition: value.wordExplatin.en_definition.defn,
+
+        wordSentence: value.wordSentence.slice(0, 3)
+      })
+
+      this.playVoice()
     }
   },
 
   methods: {
     playVoice() {
-
-    },
-
-    renderWordInfo(wordInfo) {
-      
+      let ia = wx.createInnerAudioContext()
+      ia.src = this.data.wordCon.wordExplatin.audio
+      ia.play()
     }
   }
 })

@@ -1,22 +1,33 @@
 // components/home/welcome/index.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
-
+    title: String,
+    animate: String
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
-
+    
   },
 
-  /**
-   * 组件的方法列表
-   */
+  attached() {
+    let hours = new Date().getHours()
+    if (hours >= 6 && hours <= 13) {
+      this.setData({
+        title: 'Good Morining'
+      })
+    }
+    if (hours > 13 && hours <= 18) {
+      this.setData({
+        title: 'Good Afternoon'
+      })
+    }
+    if (hours > 18) {
+      this.setData({
+        title: 'Good Evening'
+      })
+    }
+  },
+
   methods: {
 
   }
