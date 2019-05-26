@@ -1,9 +1,9 @@
 <!--pages/sconclusion/sconclusion.wxml-->
-<nav-cmp mode="1" title="小结界面" />
+<nav-cmp mode="1" title="小结界面"  line-class="line"/>
 
-<conclusion-cmp />
+<conclusion-cmp  wordArr="{{wordArr}}"/>
 
-<view style="height:130rpx;"></view>
+<view style="height:160rpx;"></view>
 
 <van-popup custom-class="posterPop" show="{{ showPoster }}" bind:close="onClose">
   <poster-cmp />

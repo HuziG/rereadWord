@@ -2,16 +2,11 @@
 Component({
  
   properties: {
-
+    wordArr: Array
   },
 
   data: {
-    wordArr: [
-      {
-        'word': 'dog',
-        'zn': '狗'
-      }
-    ]
+    
   },
 
   methods: {

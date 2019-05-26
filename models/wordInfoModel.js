@@ -23,6 +23,7 @@ class WordInfoModel {
   
   setWordMode(mode) {
     App.globalData['user_wordinfo'].mode = mode
+    App.globalData['user_wordinfo'].remWordNum = 0
 
     let tableName = 'user_wordinfo'
     let recordID = App.globalData['user_wordinfo'].id
@@ -42,12 +43,19 @@ class WordInfoModel {
     })
   }
 
-  addWordGroup() {
-    
-  }
+  addWordNum(num) {
+    let tableName = 'user_wordinfo'
+    let recordID = App.globalData['user_wordinfo'].id 
 
-  addWordNum() {
+    let Product = new wx.BaaS.TableObject(tableName)
+    let product = Product.getWithoutData(recordID)
 
+    product.incrementBy('remWordNum', num)
+    product.update().then(res => {
+      // success
+    }, err => {
+      // err
+    })
   }
 }
 

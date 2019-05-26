@@ -1,15 +1,22 @@
 // components/conclusion/poster/index.js
 Component({
   properties: {
-
+    date: String,
+    day: String,
+    dayNum: Number,
+    startDraw: Boolean
   },
 
   data: {
-
+   
   },
 
-  attached() {
-    this.draw('2019.2', '5', 10)
+  observers: {
+    'startDraw': function (value) {
+      if (value) {
+        this.draw(this.data.date, this.data.day, this.data.dayNum)
+      }
+    }
   },
 
   methods: {
@@ -54,10 +61,10 @@ Component({
       ctx.fillText('扫一扫，了解下~', 70, 370)
 
       ctx.draw()
-    },
 
-    homeTo() {
-      
+      setTimeout(() => {
+        this.triggerEvent('showPoster', {})
+      }, 30000);
     }
   }
 })

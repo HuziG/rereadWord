@@ -6,7 +6,8 @@ class StudyModel {
         success(res) {
           if (res.data.status_code === 0) {
             resolve(res.data.data)
-          } else {
+          }
+          if (res.data.status_code != 0) {
             reject(true)
           }
         },
@@ -24,7 +25,8 @@ class StudyModel {
         success(res) {
           if (res.data.status_code === 0) {
             resolve(res.data.data)
-          } else {
+          }
+          if (res.data.status_code != 0) {
             reject(true)
           }
         },
@@ -39,11 +41,15 @@ class StudyModel {
     return new Promise((resolve, reject) => {
       let o = {}
       this.getWordExplain(value).then(res => {
-        o['wordExplatin'] = res
-        return this.getWordSentence(res.id)
+        if (res != 'break') {
+          o['wordExplatin'] = res
+          return this.getWordSentence(res.id)
+        }
       }).then(res => {
         o['wordSentence'] = res
         resolve(o)
+      }).catch(res => {
+        resolve('null')
       })
     })
   }
@@ -58,6 +64,7 @@ class StudyModel {
 
     return new Promise((resolve, reject) => {
       Promise.all(promiseArr).then(res => {
+        res = this.filterWordArr(res)
         resolve(res)
       })
     })
@@ -71,6 +78,15 @@ class StudyModel {
       });
       return promise;
     }
+  }
+
+  filterWordArr(value) {
+    value.forEach((item, index, arr) => {
+      if (item === 'null') {
+        value.splice(index, 1)
+      }
+    });
+    return value
   }
 }
 

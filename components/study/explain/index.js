@@ -1,7 +1,5 @@
 // components/study/explain/index.js
-import { StudyModel } from '../../../models/studyModel.js';
-
-const studyModel = new StudyModel()
+const ia = wx.createInnerAudioContext()
 
 Component({
   properties: {
@@ -33,7 +31,6 @@ Component({
 
   methods: {
     playVoice() {
-      let ia = wx.createInnerAudioContext()
       ia.src = this.data.wordCon.wordExplatin.audio
       ia.play()
     }

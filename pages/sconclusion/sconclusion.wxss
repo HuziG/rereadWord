@@ -2,11 +2,14 @@
 .bottom-button{
   position: fixed;
   background-color: #fff;
-  bottom: 50rpx;
+  bottom: 0rpx;
   left: 0;
   width: 100%;
 }
 .posterPop{
   background-color: transparent !important;
+}
+.line{
+  border-bottom: 1px solid #666666;
 }
   

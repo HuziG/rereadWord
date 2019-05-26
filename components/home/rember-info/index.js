@@ -27,6 +27,7 @@ Component({
   observers: {
     'mode': function () {
       if (this.data.mode === '') { return }
+      
       let lib = this.data.wordLibrary.find(item => {
         return item.name === this.data.mode
       })

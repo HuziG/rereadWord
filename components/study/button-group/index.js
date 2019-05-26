@@ -32,15 +32,18 @@ Component({
     },
 
     knowHandle() {
+      wx.vibrateShort()
       this.triggerEvent('knowHandle', {}, {})
     },
 
     nextHandle() {
+      wx.vibrateShort()
       this.setData({ mood: 1 })
       this.triggerEvent('nextHandle', {}, {})
     },
 
     preHandle() {
+      wx.vibrateShort()
       this.setData({ mood: 1 }) 
       this.triggerEvent('preHandle', {}, {})
     }

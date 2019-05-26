@@ -1,6 +1,5 @@
 var cet6 = [
   'initially',
-  'makeup',
 
   'rmost',
   'optimum',

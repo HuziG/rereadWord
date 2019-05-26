@@ -1,7 +1,6 @@
 /* components/study/conclusion/index.wxss */
 .container{
   padding: 0 40rpx;
-  border-top: 1px solid #666666;
 }
 .word-item{
   padding: 15rpx 0rpx;

@@ -11,17 +11,24 @@ var tok = '24.a530492f7418910f32f63eff80a10340.2592000.1560246717.282335-1623154
 var cuid = 'CC-2F-71-2E-04-C3'
 var ia = wx.createInnerAudioContext()
 
+import { ClockInModel } from '../../models/clockInModel.js'
+
+const clockInModel = new ClockInModel()
+
 Page({
   data: {},
 
   onLoad() {
     // this.getVoice('cat')
 
-    this.getExample(1521)
+    // this.getExample(1521)
+
+    clockInModel.getDaysNum().then(res => {
+      console.log(res)
+    })
   },
 
   getVoice(word) {
-
     return
 
     getZn(word).then(creatVoice).then(playVoice)

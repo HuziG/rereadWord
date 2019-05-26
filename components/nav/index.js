@@ -1,6 +1,6 @@
 // components/nav/index.js
 Component({
-  
+  externalClasses: ['line-class'],
   properties: {
     mode: Number,
     title: String

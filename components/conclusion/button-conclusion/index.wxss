@@ -4,7 +4,7 @@
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 34rpx;
+  padding: 40rpx 34rpx;
 }
 .defined-btn{
   border-radius: 10em !important;

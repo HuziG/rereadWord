@@ -109,7 +109,7 @@ class UserModel {
 
     let apple = {
       openid,
-      lastDate: '',
+      lastDate: null,
       daysNum: 0
     }
 

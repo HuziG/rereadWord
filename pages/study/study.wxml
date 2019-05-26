@@ -21,7 +21,7 @@
       bind:knowHandle="knowHandle"
       bind:nextHandle="nextHandle"
       bind:preHandle="preHandle">
-      <voice-cmp word="" zn="" />
+      <voice-cmp word="{{wordCon.wordExplatin.content}}" zn="{{wordCon.wordExplatin.definition}}" stopPlay="{{stopPlay}}"/>
     </button-group-cmp>
   </view>
 </view>

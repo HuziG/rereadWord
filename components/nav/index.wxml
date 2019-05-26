@@ -1,5 +1,5 @@
 <!--components/nav/index.wxml-->
-<view class="main-container" style="padding-top: {{barHeight}}px;">
+<view class="main-container line-class" style="padding-top: {{barHeight}}px;">
   <view wx:if="{{mode === 0}}"></view>
 
   <view class="flex-wrapper" wx:if="{{mode === 1}}">

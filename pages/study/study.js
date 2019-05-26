@@ -29,23 +29,6 @@ Page({
     this.filterWord()
   },
 
-  filterWord() {
-    let user_wordinfo = App.globalData['user_wordinfo']
-    let lib = this.data.wordLibrary.find(item => {
-      return item.name === user_wordinfo.mode
-    })
-    this.data.wordArr = lib.key.slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum+20)
-
-    this.setData({ loading: true })
-    studyModel.forOrgWordInfo(this.data.wordArr).then(res => {
-      this.setData({ loading: false })
-      this.setData({
-        wordArr: res
-      })
-      this.renderWord(0)
-    })
-  },
-
   unKnowHandle() {
     this.setData({
       explainShow: true
@@ -53,17 +36,20 @@ Page({
   },
 
   knowHandle() {
+    if (!this.finishCheck()) { return }
     this.setData({
-      wordIndex: ++this.data.wordIndex,
+      wordIndex: this.data.wordIndex + 1,
       explainShow: false
     })
     this.renderWord(this.data.wordIndex)
   },
 
   nextHandle() {
+    if (!this.finishCheck()) { return }
     this.setData({
-      wordIndex: ++this.data.wordIndex,
-      explainShow: false
+      wordIndex: this.data.wordIndex + 1,
+      explainShow: false,
+      stopPlay: true
     })
     this.renderWord(this.data.wordIndex)
   },
@@ -71,9 +57,49 @@ Page({
   preHandle() {
     this.setData({
       wordIndex: --this.data.wordIndex,
-      explainShow: false
+      explainShow: false,
+      stopPlay: true
     })
     this.renderWord(this.data.wordIndex)
+  },
+
+  finishCheck() {
+    if (this.data.wordIndex + 1 === this.data.wordArr.length) {
+      console.log('finish')
+      this.setData({ stopPlay: true })
+      this.mapWordZn()
+      return false
+    } else {
+      return true
+    }
+  },
+
+  mapWordZn() {
+    let arr = this.data.wordArr.map(item => {
+      return { word: item.wordExplatin.content, zn: item.wordExplatin.definition}
+    })
+    App.globalData.conslusionWord = arr
+    wx.redirectTo({
+      url: `/pages/sconclusion/sconclusion`
+    })
+  },
+
+  filterWord() {
+    let user_wordinfo = App.globalData['user_wordinfo']
+    let lib = this.data.wordLibrary.find(item => {
+      return item.name === user_wordinfo.mode
+    })
+    this.data.wordArr = lib.key.slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum + 20)
+
+    this.setData({ loading: true })
+    studyModel.forOrgWordInfo(this.data.wordArr).then(res => {
+      console.log(res)
+      this.setData({ loading: false })
+      this.setData({
+        wordArr: res
+      })
+      this.renderWord(0)
+    })
   },
 
   renderWord(index) {
