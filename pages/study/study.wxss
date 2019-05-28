@@ -25,10 +25,26 @@ page{
   padding: 20rpx 0;
   background-color: #EDEBE7;
 }
-.position-fixed{
-  position: fixed;
+
+.loading-text{
+  text-align: center;
 }
-.loading-img{
-  width: 48px;
-  height: 48px;
+.loading-text .loading-title{
+  color: #000;
+  font-size: 14pt;
+  animation: fade .8s infinite linear;
+}
+.loading-text .loading-des{
+  color: #666;
+  font-size: 9pt;
+  margin-top: 20rpx;
+}
+
+@keyframes fade {
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }

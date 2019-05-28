@@ -23,9 +23,41 @@ Page({
 
     // this.getExample(1521)
 
-    clockInModel.getDaysNum().then(res => {
-      console.log(res)
+    // 累计打卡使用
+    // clockInModel.getDaysNum().then(res => {
+    //   console.log(res)
+    // })
+
+    let wordaArr = Array.from(new Set(kaoyan.concat(kaoyan_import)))
+
+    wordaArr.forEach((item1, index1, arr1) => {
+      cet6.forEach((item2, index2, arr2) => {
+        if (item1 === item2) {
+          wordaArr.splice(index1, 1)
+        }
+      })
     })
+
+    wordaArr.forEach((item1, index1, arr1) => {
+      cet4.forEach((item2, index2, arr2) => {
+        if (item1 === item2) {
+          wordaArr.splice(index1, 1)
+        }
+      })
+    })
+    
+    let index = 0
+    wx.setStorageSync('null_word', [])
+    let timeinterval = setInterval(() => {
+      if (index === wordaArr.length) {
+        console.log('finish')
+        clearInterval(timeinterval)
+        return
+      }
+      this.getSearch(wordaArr[index])
+      index += 1
+    }, 1000);
+
   },
 
   getVoice(word) {
@@ -74,20 +106,25 @@ Page({
   },
 
 
-  // getSearch(word) {
-  //   return new Promise((resolve, reject) => {
-  //     wx.request({
-  //       url: `https://api.shanbay.com/bdc/search/?word=${word}`, // 仅为示例，并非真实的接口地址
-  //       data: {},
-  //       header: {
-  //         'content-type': 'application/json' // 默认值
-  //       },
-  //       success(res) {
-  //         resolve(res.data.data)
-  //       }
-  //     })
-  //   })
-  // }
+  getSearch(word) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `https://api.shanbay.com/bdc/search/?word=${word}`, // 仅为示例，并非真实的接口地址
+        data: {},
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          if (res.data.status_code != 0) {
+            let null_word = wx.getStorageSync('null_word')
+            null_word.push(word)
+            wx.setStorageSync('null_word', null_word)
+          }
+          resolve(res.data.data)
+        }
+      })
+    })
+  },
 
   getExample(id) {
     return new Promise((resolve, reject) => {

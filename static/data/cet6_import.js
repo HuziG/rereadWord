@@ -89,7 +89,6 @@ var cet6_import=[
   'essence',
   'estimate',
   'expenditure',
-  'extinctionn',
   'fashion',
   'flaw',
   'fortune',
@@ -340,7 +339,6 @@ var cet6_import=[
   'virtually',
 
   'workout',
-  'worthoneswhile',
   'abbreviation',
   'abolish',
   'absent',

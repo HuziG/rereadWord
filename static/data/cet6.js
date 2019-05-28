@@ -1,11 +1,9 @@
 var cet6 = [
   'initially',
 
-  'rmost',
   'optimum',
   'block',
   'damn',
-  'outeintegral',
   'composition',
   'value',
   'dignity',
@@ -637,9 +635,7 @@ var cet6 = [
   'insignificant',
 
   'doubtless',
-  'iinfinitely',
 
-  'ndefinite',
   'unlimited',
 
   'infinite',
@@ -657,7 +653,6 @@ var cet6 = [
   'ruthless',
   'nought',
 
-  'filthsnail',
 
   'compliment',
   'question',
@@ -741,7 +736,6 @@ var cet6 = [
   'twist',
 
   'ile',
-  'twatt',
 
   'elliptical',
   'haul',
@@ -807,7 +801,6 @@ var cet6 = [
   'popularity',
 
   'accessory',
-  'whilstconj.',
 
   'correspondence',
   'currency',
@@ -834,7 +827,6 @@ var cet6 = [
   'settlement',
 
   'adjoin',
-  'mishief',
 
   'questionnaire',
   'Catholic',
@@ -1755,7 +1747,6 @@ var cet6 = [
   'dwell',
 
   'symposium',
-  'whoeverpro',
 
   'rectify',
   'vein',
@@ -2039,7 +2030,6 @@ var cet6 = [
   'hospitality',
   'howl',
 
-  'hurrahint.',
   'log',
 
   'aerospace',
@@ -2333,7 +2323,6 @@ var cet6 = [
   'bait',
   'youngster',
 
-  'whereasconj.',
   'malice',
 
   'subsequent',
@@ -2609,7 +2598,6 @@ var cet6 = [
   'muse',
   'meditate',
 
-  'hushint.',
   'repeal',
 
   'brood',
@@ -2876,14 +2864,11 @@ var cet6 = [
   'patriotic',
   'dwarf',
 
-  'alasint.',
   'stout',
 
   'pathetic',
   'Egyptian',
 
-  'shouldaux.',
-  'oughtaux',
 
   'referee',
 'scripture',
@@ -3093,7 +3078,6 @@ var cet6 = [
   'bulletin',
 
   'Moslem',
-  'allowancen',
 
 ]
 module.exports = {

@@ -22,7 +22,8 @@ Page({
       { name: 'kaoyan_import', key: kaoyan_import },
       { name: 'kaoyan', key: kaoyan }
     ],
-    wordArr: []
+    wordArr: [],
+    loading: true
   },
 
   onLoad: function (options) {
@@ -48,8 +49,7 @@ Page({
     if (!this.finishCheck()) { return }
     this.setData({
       wordIndex: this.data.wordIndex + 1,
-      explainShow: false,
-      stopPlay: true
+      explainShow: false
     })
     this.renderWord(this.data.wordIndex)
   },
@@ -64,9 +64,9 @@ Page({
   },
 
   finishCheck() {
+    this.setData({ stopPlay: true })
     if (this.data.wordIndex + 1 === this.data.wordArr.length) {
       console.log('finish')
-      this.setData({ stopPlay: true })
       this.mapWordZn()
       return false
     } else {
@@ -91,11 +91,10 @@ Page({
     })
     this.data.wordArr = lib.key.slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum + 20)
 
-    this.setData({ loading: true })
     studyModel.forOrgWordInfo(this.data.wordArr).then(res => {
       console.log(res)
-      this.setData({ loading: false })
       this.setData({
+        loading: false,
         wordArr: res
       })
       this.renderWord(0)

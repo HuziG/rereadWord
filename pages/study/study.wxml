@@ -2,7 +2,11 @@
 <nav-cmp mode="2" title="学习模式" />
 
 <view class="flex-container" wx:if="{{loading}}">
-  <image class="loading-img" src="/static/img/loading.gif" />
+  <view class="flex-container loading-text">
+    <view class="loading-title">组织单词中...</view>
+    <view class="loading-des">如果等待时间过长，可以选择重启应用哦~</view>
+  </view>
+  
 </view>
 
 <view wx:if="{{!loading}}">

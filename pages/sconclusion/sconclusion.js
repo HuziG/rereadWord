@@ -11,11 +11,21 @@ Page({
   },
 
   onLoad: function () {
+    this.renderView()
+  },
+
+  renderView() {
     let conslusionWord = App.globalData.conslusionWord
     this.setData({
       wordArr: conslusionWord
     })
     wordInfoModel.addWordNum(conslusionWord.length).then(res => {
+    })
+  },
+
+  showPoster() {
+    this.setData({
+      showPoster: true
     })
   }
 })

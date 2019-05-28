@@ -1,22 +1,24 @@
 // components/conclusion/poster/index.js
+import { ClockInModel } from '../../../models/clockInModel.js'
+
+const clockInModel = new ClockInModel()
+
 Component({
   properties: {
     date: String,
     day: String,
-    dayNum: Number,
-    startDraw: Boolean
+    dayNum: Number
   },
 
   data: {
    
   },
 
-  observers: {
-    'startDraw': function (value) {
-      if (value) {
-        this.draw(this.data.date, this.data.day, this.data.dayNum)
-      }
-    }
+  attached() {
+    let newDate = new Date()
+    clockInModel.getDaysNum().then(res => {
+      this.draw(`${newDate.getFullYear()}.${newDate.getMonth() + 1}`, newDate.getDate(), res)
+    })
   },
 
   methods: {
@@ -60,11 +62,35 @@ Component({
       ctx.fillText('记单词软件哪家强?', 75, 345)
       ctx.fillText('扫一扫，了解下~', 70, 370)
 
-      ctx.draw()
+      ctx.draw(false, () => {
+        setTimeout(() => {
+          wx.canvasToTempFilePath({
+            canvasId: 'customCanvas',
+            quality: 0.5,
+            success: res => {
+              wx.saveImageToPhotosAlbum({
+                filePath: res.tempFilePath,
+                success: () => {
+                  wx.showToast({
+                    title: '海报已保存到相册~'
+                  })
+                  this.triggerEvent('showPoster', {})
+                }
+              })
+            },
+            fail: (err) => {
+              console.log(err)
+              this.homeTo()
+            }
+          }, this)
+        }, 28500);
+      })
+    },
 
-      setTimeout(() => {
-        this.triggerEvent('showPoster', {})
-      }, 30000);
+    homeTo() {
+      wx.switchTab({
+        url: '/pages/home/home'
+      });
     }
   }
 })

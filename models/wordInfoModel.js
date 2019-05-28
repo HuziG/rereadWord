@@ -44,6 +44,8 @@ class WordInfoModel {
   }
 
   addWordNum(num) {
+    App.globalData['user_wordinfo'].remWordNum += num
+
     let tableName = 'user_wordinfo'
     let recordID = App.globalData['user_wordinfo'].id 
 
@@ -51,10 +53,15 @@ class WordInfoModel {
     let product = Product.getWithoutData(recordID)
 
     product.incrementBy('remWordNum', num)
-    product.update().then(res => {
-      // success
-    }, err => {
-      // err
+    
+    return new Promise((resolve, reject) => {
+      product.update().then(res => {
+        // success
+        resolve(true)
+      }, err => {
+        // err
+        reject(true)
+      })
     })
   }
 }
