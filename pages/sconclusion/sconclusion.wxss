@@ -11,19 +11,24 @@
 .posterPop{
   background-color: transparent !important;
 }
-.poster-wrapper{
-  box-shadow: 1px 1px 10px 1px rgb(360, 100, 99);
-}
 .line{
   border-bottom: 1px solid #666666;
 }
 .cancel-wrapper{
-  padding: 40rpx 0;
+  margin: 40rpx 0;
+  padding: 10rpx 15rpx;
+  background-color: transparent;
+  border-radius: 10rpx;
   text-align: center;
 }
 .icon-close{
   font-size: 18pt;
   color: #fff;
+  width:40px;
+  margin:0 auto;
+  border:2px solid #fff;
+  padding:5px 10px;
+  border-radius:5px;
 }
 .icon-close:active{
   opacity: .5;

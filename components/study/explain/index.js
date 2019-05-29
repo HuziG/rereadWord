@@ -1,5 +1,5 @@
 // components/study/explain/index.js
-const ia = wx.createInnerAudioContext()
+
 
 Component({
   properties: {
@@ -22,7 +22,7 @@ Component({
         definition: value.wordExplatin.definition,
         en_definition: value.wordExplatin.en_definition.defn,
 
-        wordSentence: value.wordSentence.slice(0, 3)
+        wordSentence: value.wordSentence
       })
 
       this.playVoice()
@@ -31,8 +31,9 @@ Component({
 
   methods: {
     playVoice() {
-      ia.src = this.data.wordCon.wordExplatin.audio
-      ia.play()
+      // ia.src = this.data.wordCon.wordExplatin.audio
+      // ia.play()
+      this.triggerEvent('renderPlayVoice', { mp3_url: this.data.wordCon.wordExplatin.audio }, {})
     }
   }
 })

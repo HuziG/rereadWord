@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "nav-cmp": "/components/nav/index",
+    "user-list-cmp": "/components/user-list/index"
+  }
 }

@@ -2,7 +2,7 @@
 
 const tok = '24.a530492f7418910f32f63eff80a10340.2592000.1560246717.282335-16231541'
 const cuid = 'CC-2F-71-2E-04-C3'
-const ia = wx.createInnerAudioContext()
+var ia = ''
 
 Component({
   properties: {
@@ -46,6 +46,7 @@ Component({
     },
 
     stop() {
+      if (ia === '') { return } 
       ia.stop()
     },
 
@@ -77,9 +78,10 @@ Component({
     },
 
     playVoice(path) {
+      ia = wx.createInnerAudioContext()
       ia.src = path
-        ia.loop = true
-        ia.play()
+      ia.loop = true
+      ia.play()
     }
 
   }

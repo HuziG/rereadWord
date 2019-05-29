@@ -1,0 +1,21 @@
+<!--components/user-list/index.wxml-->
+<button class="btn" open-type="feedback">
+  <view class="btn-in">
+    <view class="title">问题反馈</view>
+    <view class="iconfont  icon-caret-right"></view>
+  </view>
+</button>
+
+<button class="btn" open-type="contact">
+  <view class="btn-in">
+    <view class="title">联系客服</view>
+    <view class="iconfont  icon-caret-right"></view>
+  </view>
+</button>
+
+<button class="btn" open-type="feedback">
+  <view class="btn-in">
+    <view class="title">关于我们</view>
+    <view class="iconfont  icon-caret-right"></view>
+  </view>
+</button>

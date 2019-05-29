@@ -12,7 +12,7 @@ Component({
     getPhoneNumber(e) {
       // let o = e.detail
       let o = {
-        tel: '18352250991'
+        tel: 'null'
       }
 
       this.triggerEvent('getPhoneNumber', { value: o }, {})

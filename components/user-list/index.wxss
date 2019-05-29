@@ -1,0 +1,22 @@
+/* components/user-list/index.wxss */
+@import '../../utils/iconfont.wxss';
+
+.btn{
+  background-color: transparent;
+  width: 85vw;
+  margin: 80rpx auto;
+  border: 1px solid #BBBBBB !important;
+  border-radius: 1em;
+}
+.btn-in{
+  display: flex;
+  font-size: 11pt;
+}
+.title{
+  flex: 11;
+  text-align: left;
+}
+.icon-caret-right{
+  flex: 1;
+  color: #FF3B1D;
+}

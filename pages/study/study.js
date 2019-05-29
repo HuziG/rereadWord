@@ -10,6 +10,7 @@ import { StudyModel } from '../../models/studyModel.js'
 
 const App = new getApp();
 const studyModel = new StudyModel()
+const ia = wx.createInnerAudioContext()
 
 Page({
 
@@ -107,5 +108,10 @@ Page({
       wordIndex: index,
       explainShow: false
     })
+  },
+
+  renderPlayVoice(e) { // 渲染播放音频
+    ia.src = e.detail.mp3_url
+    ia.play()
   }
 })

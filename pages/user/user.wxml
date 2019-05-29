@@ -1,2 +1,4 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<nav-cmp mode="1" title="(๑•̀ㅂ•́)و✧" />
+
+<user-list-cmp />

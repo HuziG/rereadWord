@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
-<nav-cmp mode="0"/>
+<nav-cmp mode="1" title="ヽ(✿ﾟ▽ﾟ)ノ"/>
 
-<search-cmp />
+<!-- <search-cmp /> -->
 
 <welcome-cmp />
 

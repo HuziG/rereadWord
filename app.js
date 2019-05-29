@@ -1,4 +1,6 @@
 //app.js
+const App = require('./static/ald-sdk/ald-stat.js').App;
+
 App({
   onLaunch: function() {
     wx.BaaS = requirePlugin('sdkPlugin')

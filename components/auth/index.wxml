@@ -7,10 +7,10 @@
     loading="{{loading}}" 
     open-type="getPhoneNumber"
     disabled="{{loading}}">
-    <text wx:if="{{loading===false}}">快速授权使用</text>
+    <text wx:if="{{loading===false}}">立即使用</text>
   </van-button>
 
   <view class="des">
-    *我们将使用您的手机号，进行快速注册
+    *我们不要您的任何隐私数据，您可以直接使用
   </view>
 </view>

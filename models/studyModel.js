@@ -46,7 +46,7 @@ class StudyModel {
           return this.getWordSentence(res.id)
         }
       }).then(res => {
-        o['wordSentence'] = res
+        o['wordSentence'] = res.slice(0, 3)
         resolve(o)
       }).catch(res => {
         resolve('null')
