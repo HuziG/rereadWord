@@ -1,4 +1,6 @@
 /* pages/sconclusion/sconclusion.wxss */
+@import '../../utils/iconfont.wxss';
+
 .bottom-button{
   position: fixed;
   background-color: #fff;
@@ -9,7 +11,21 @@
 .posterPop{
   background-color: transparent !important;
 }
+.poster-wrapper{
+  box-shadow: 1px 1px 10px 1px rgb(360, 100, 99);
+}
 .line{
   border-bottom: 1px solid #666666;
+}
+.cancel-wrapper{
+  padding: 40rpx 0;
+  text-align: center;
+}
+.icon-close{
+  font-size: 18pt;
+  color: #fff;
+}
+.icon-close:active{
+  opacity: .5;
 }
   

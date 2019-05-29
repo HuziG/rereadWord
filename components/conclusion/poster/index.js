@@ -66,24 +66,28 @@ Component({
         setTimeout(() => {
           wx.canvasToTempFilePath({
             canvasId: 'customCanvas',
-            quality: 0.5,
             success: res => {
+              this.triggerEvent('showPoster', {}, {})
+
               wx.saveImageToPhotosAlbum({
                 filePath: res.tempFilePath,
                 success: () => {
+                  this.triggerEvent('showPoster', {})
                   wx.showToast({
+                    icon: 'none',
                     title: '海报已保存到相册~'
                   })
-                  this.triggerEvent('showPoster', {})
-                }
+                },
+                fail: () => {
+
+                } 
               })
             },
             fail: (err) => {
               console.log(err)
-              this.homeTo()
             }
           }, this)
-        }, 28500);
+        }, 30000);
       })
     },
 

@@ -6,12 +6,11 @@
     <view class="loading-title">组织单词中...</view>
     <view class="loading-des">如果等待时间过长，可以选择重启应用哦~</view>
   </view>
-  
 </view>
 
 <view wx:if="{{!loading}}">
   <view class="progress-wrapper">
-        <van-progress percentage="{{(wordIndex+1) * 5}}" color="#FF3B1D" show-pivot="{{false}}" custom-class="van-progress" />
+    <van-progress percentage="{{(wordIndex+1) * 10}}" color="#FF3B1D" show-pivot="{{false}}" custom-class="van-progress" />
   </view>
   
   <explain-info-cmp id="explainCmp" wordCon="{{wordCon}}" explainShow="{{explainShow}}" />

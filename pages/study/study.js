@@ -89,7 +89,7 @@ Page({
     let lib = this.data.wordLibrary.find(item => {
       return item.name === user_wordinfo.mode
     })
-    this.data.wordArr = lib.key.slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum + 20)
+    this.data.wordArr = lib.key.slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum + 10)
 
     studyModel.forOrgWordInfo(this.data.wordArr).then(res => {
       console.log(res)

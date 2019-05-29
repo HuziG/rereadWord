@@ -39,7 +39,9 @@ Component({
       if (this.data.disalbed) {
         return
       }
-      console.log('next')
+      wx.switchTab({
+        url: '/pages/home/home'
+      })
     }
   }
 })

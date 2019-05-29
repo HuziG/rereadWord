@@ -4,7 +4,8 @@ const App = new getApp()
 Page({
 
   data: {
-    showPoster: false
+    showPoster: false,
+    studyBtnLock: true
   },
 
   onLoad: function (options) {
@@ -23,7 +24,14 @@ Page({
     })
   },
 
+  unLock() {
+    this.setData({
+      studyBtnLock: false
+    })
+  },
+
   toStudy() {
+    if (this.data.studyBtnLock) { return } 
     wx.navigateTo({
       url: '/pages/study/study'
     })

@@ -14,7 +14,7 @@
       <block wx:if="{{!nextShow}}">
         请再看下单词吧-{{second}} S
       </block>
-      <block wx:if="{{nextShow}}">
+      <block wx:if="{{nextShow}}" bind:tap="homeTo">
         下一步
       </block>
     </block> 

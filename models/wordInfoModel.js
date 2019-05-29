@@ -64,6 +64,26 @@ class WordInfoModel {
       })
     })
   }
+
+  initWordInfo() {
+    let tableName = 'user_wordinfo'
+    let recordID = App.globalData['user_wordinfo'].id
+
+    let Product = new wx.BaaS.TableObject(tableName)
+    let product = Product.getWithoutData(recordID)
+
+    product.set('mode', null)
+    product.set('remWordNum', 0)
+    return new Promise((resolve, reject) => {
+      product.update().then(res => {
+        console.log(res.data)
+        App.globalData['user_wordinfo'] = res.data
+        resolve(true)
+      }, err => {
+        reject(true)
+      })
+    })
+  }
 }
 
 export {

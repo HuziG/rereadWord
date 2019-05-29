@@ -27,5 +27,11 @@ Page({
     this.setData({
       showPoster: true
     })
+  },
+
+  hidePoster() {
+    this.setData({
+      showPoster: false
+    })
   }
 })
