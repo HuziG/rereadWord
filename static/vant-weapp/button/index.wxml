@@ -2,38 +2,27 @@
 
 <button
   id="{{ id }}"
+  lang="{{ lang }}"
   class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, unclickable: disabled || loading }]) }}"
   open-type="{{ openType }}"
-  hover-class="van-button--active hover-class"
-  lang="{{ lang }}"
-  business-id="{{ businessId }}"
   session-from="{{ sessionFrom }}"
-  send-message-title="{{ sendMessageTitle }}"
-  send-message-path="{{ sendMessagePath }}"
-  send-message-img="{{ sendMessageImg }}"
-  show-message-card="{{ showMessageCard }}"
   app-parameter="{{ appParameter }}"
-  aria-label="{{ ariaLabel }}"
-  bindtap="onClick"
-  bindgetuserinfo="bindGetUserInfo"
-  bindcontact="bindContact"
-  bindgetphonenumber="bindGetPhoneNumber"
+  send-message-img="{{ sendMessageImg }}"
+  send-message-path="{{ sendMessagePath }}"
+  show-message-card="{{ showMessageCard }}"
+  send-message-title="{{ sendMessageTitle }}"
+  bind:tap="onClick"
   binderror="bindError"
-  bindlaunchapp="bindLaunchApp"
+  bindcontact="bindContact"
   bindopensetting="bindOpenSetting"
+  bindgetuserinfo="bindGetUserInfo"
+  bindgetphonenumber="bindGetPhoneNumber"
 >
-  <block wx:if="{{ loading }}">
-    <van-loading
-      custom-class="loading-class"
-      size="{{ loadingSize }}"
-      color="{{ type === 'default' ? '#c9c9c9' : '' }}"
-    />
-    <view
-      wx:if="{{ loadingText }}"
-      class="van-button__loading-text"
-    >
-      {{ loadingText }}
-    </view>
-  </block>
+  <van-loading
+    wx:if="{{ loading }}"
+    custom-class="loading-class"
+    size="{{ size === 'mini' ? '14px' : '20px' }}"
+    color="{{ type === 'default' ? '#c9c9c9' : '' }}"
+  />
   <slot wx:else />
 </button>

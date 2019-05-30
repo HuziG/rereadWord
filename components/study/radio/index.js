@@ -19,7 +19,7 @@ Component({
     'word': function (value) {
       this.setData({
         play: false,
-        voiceUrl: undefined
+        voiceUrl: null
       })
     }
   },
@@ -39,7 +39,7 @@ Component({
     },
 
     play() {
-      if (this.data.voiceUrl != undefined) {
+      if (this.data.voiceUrl != null) {
         this.playVoice(this.data.voiceUrl)
       } else {
         this.getZn().then(this.creatVoice).then(res => {
@@ -68,7 +68,7 @@ Component({
     creatVoice(str) {
      return new Promise((resolve, reject) => {
        wx.downloadFile({
-         url: `http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=${cuid}&tok=${tok}&tex=${encodeURI(encodeURI(str))}&per=1&spd=5&pit=5&aue=3`,
+         url: `https://wxapi.hotapp.cn/proxy/?appkey=hotapp673337801&url=http://tsn.baidu.com?lan=zh&ctp=1&cuid=${cuid}&tok=${tok}&tex=${encodeURI(encodeURI(str))}&per=1&spd=5&pit=5&aue=3`,
          success(res) {
            resolve(res.tempFilePath)
          },
