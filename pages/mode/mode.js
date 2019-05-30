@@ -1,6 +1,7 @@
 // pages/mode/mode.js
 import { WordInfoModel } from '../../models/wordInfoModel.js'
 
+const Page = require('../../utils/ald-stat.js').Page;
 const wordInfoModel = new WordInfoModel()
 
 Page({

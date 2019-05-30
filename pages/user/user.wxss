@@ -1,1 +1,17 @@
 /* pages/user/user.wxss */
+.aboutus-popup{
+  background-color: #FF3B1D !important;
+  color: #fff;
+  padding: 0 80rpx 50rpx 60rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.item{
+  margin-top:50rpx;
+}
+.title{
+  font-size: 14pt;
+}
+.des{
+  font-size: 12pt;
+}

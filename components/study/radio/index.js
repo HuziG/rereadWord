@@ -7,47 +7,49 @@ var ia = ''
 Component({
   properties: {
     word: String,
-    zn: String,
-    stopPlay: Boolean
+    zn: String
   },
 
   data: {
-    play: false
+    play: false,
+    refresh: true
   },
 
   observers: {
-    'play': function (play) {
-      if (!play) {
-        this.stop()
-      } else {
-        this.play()
-      }
-    },
-    'stopPlay': function (value) {
-      if (value) {
-        this.stop()
-        this.setData({
-          play: false
-        })
-      }
+    'word': function (value) {
+      this.setData({
+        play: false,
+        voiceUrl: undefined
+      })
     }
   },
 
   methods: {
 
     playHandle() {
+      let play = !this.data.play
       this.setData({
-        play: !this.data.play
+        play 
       })
+      if (play) {
+        this.play()
+      } else {
+        this.stop()
+      }
     },
 
     play() {
-      this.getZn().then(this.creatVoice).then(this.playVoice)
+      if (this.data.voiceUrl != undefined) {
+        this.playVoice(this.data.voiceUrl)
+      } else {
+        this.getZn().then(this.creatVoice).then(res => {
+          return this.playVoice(res)
+        })
+      }
     },
 
     stop() {
-      if (ia === '') { return } 
-      ia.stop()
+      this.triggerEvent('stopPlayVoice', {}, {})
     },
 
     getZn() {
@@ -78,17 +80,11 @@ Component({
     },
 
     playVoice(path) {
-      ia = wx.createInnerAudioContext()
-      ia.src = path
-      ia.loop = true
-      ia.play()
+      this.setData({
+        voiceUrl: path
+      })
+      this.triggerEvent('loopPlayVoice', { mp3_url: path }, {})
     }
 
   }
 })
-
-/**
- * 点击按钮，根据状态
- *  播放：执行播音程序，抛出播放url至成员变量，生成音频管理器，使用url播放音频(要有loading提示)
- *  暂停：执行暂停程序
- */

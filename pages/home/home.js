@@ -1,4 +1,5 @@
 // pages/home/home.js
+const Page = require('../../utils/ald-stat.js').Page;
 const App = new getApp()
 
 Page({

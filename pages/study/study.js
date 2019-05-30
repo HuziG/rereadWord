@@ -8,6 +8,7 @@ import { kaoyan } from '../../static/data/kaoyan.js'
 
 import { StudyModel } from '../../models/studyModel.js'
 
+const Page = require('../../utils/ald-stat.js').Page;
 const App = new getApp();
 const studyModel = new StudyModel()
 const ia = wx.createInnerAudioContext()
@@ -56,16 +57,16 @@ Page({
   },
 
   preHandle() {
+    this.stopPlayVoice()
     this.setData({
       wordIndex: --this.data.wordIndex,
-      explainShow: false,
-      stopPlay: true
+      explainShow: false
     })
     this.renderWord(this.data.wordIndex)
   },
 
   finishCheck() {
-    this.setData({ stopPlay: true })
+    this.stopPlayVoice()
     if (this.data.wordIndex + 1 === this.data.wordArr.length) {
       console.log('finish')
       this.mapWordZn()
@@ -110,8 +111,19 @@ Page({
     })
   },
 
-  renderPlayVoice(e) { // 渲染播放音频
+  initPlayVoice(e) { // 渲染播放音频
     ia.src = e.detail.mp3_url
+    ia.loop = false
     ia.play()
+  },
+
+  loopPlayVoice(e) {
+    ia.src = e.detail.mp3_url
+    ia.loop = true
+    ia.play()
+  },
+
+  stopPlayVoice() {
+    ia.stop()
   }
 })

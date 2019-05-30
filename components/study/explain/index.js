@@ -31,9 +31,7 @@ Component({
 
   methods: {
     playVoice() {
-      // ia.src = this.data.wordCon.wordExplatin.audio
-      // ia.play()
-      this.triggerEvent('renderPlayVoice', { mp3_url: this.data.wordCon.wordExplatin.audio }, {})
+      this.triggerEvent('initPlayVoice', { mp3_url: this.data.wordCon.wordExplatin.audio }, {})
     }
   }
 })

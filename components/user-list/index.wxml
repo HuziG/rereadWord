@@ -13,7 +13,7 @@
   </view>
 </button>
 
-<button class="btn" open-type="feedback">
+<button class="btn" bind:tap="showAboutUs">
   <view class="btn-in">
     <view class="title">关于我们</view>
     <view class="iconfont  icon-caret-right"></view>

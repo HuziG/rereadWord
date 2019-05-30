@@ -2,6 +2,7 @@
 import { UserModel } from '../../models/userModel.js'
 import { WordInfoModel } from '../../models/wordInfoModel.js'
 
+const Page = require('../../utils/ald-stat.js').Page;
 const App = getApp()
 
 const userModel = new UserModel()

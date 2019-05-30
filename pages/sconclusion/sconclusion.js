@@ -1,6 +1,7 @@
 // pages/sconclusion/sconclusion.js
 import { WordInfoModel } from '../../models/wordInfoModel'
 
+const Page = require('../../utils/ald-stat.js').Page;
 const App = new getApp()
 const wordInfoModel = new WordInfoModel()
 

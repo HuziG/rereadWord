@@ -5,7 +5,7 @@ Component({
   },
 
   data: {
-    second: 30,
+    second: 20,
     disalbed: true,
     nextShow: false,
     loading: false

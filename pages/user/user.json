@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "van-popup": "/static/vant-weapp/popup/index",
     "nav-cmp": "/components/nav/index",
     "user-list-cmp": "/components/user-list/index"
   }

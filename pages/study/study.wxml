@@ -21,7 +21,7 @@
   <explain-info-cmp 
     wordCon="{{wordCon}}" 
     explainShow="{{explainShow}}" 
-    bind:renderPlayVoice="renderPlayVoice"
+    bind:initPlayVoice="initPlayVoice"
     />
   
   <view style="height:140rpx;"></view>
@@ -36,7 +36,9 @@
       <voice-cmp 
         word="{{wordCon.wordExplatin.content}}" 
         zn="{{wordCon.wordExplatin.definition}}" 
-        stopPlay="{{stopPlay}}"
+        play="{{play}}"
+        bind:loopPlayVoice="loopPlayVoice"
+        bind:stopPlayVoice="stopPlayVoice"
       />
     </button-group-cmp>
   </view>
