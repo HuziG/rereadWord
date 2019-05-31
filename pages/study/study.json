@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "van-popup": "/static/vant-weapp/popup/index",
     "van-progress": "/static/vant-weapp/progress/index",
     "nav-cmp": "/components/nav/index",
     "explain-info-cmp": "/components/study/explain/index",

@@ -25,7 +25,8 @@ Page({
       { name: 'kaoyan', key: kaoyan }
     ],
     wordArr: [],
-    loading: true
+    loading: true,
+    znPopup: false
   },
 
   onLoad: function (options) {
@@ -94,7 +95,6 @@ Page({
     this.data.wordArr = lib.key.slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum + 10)
 
     studyModel.forOrgWordInfo(this.data.wordArr).then(res => {
-      console.log(res)
       this.setData({
         loading: false,
         wordArr: res
@@ -118,6 +118,9 @@ Page({
   },
 
   loopPlayVoice(e) {
+    this.setData({
+      znPopup: true
+    })
     ia.src = e.detail.mp3_url
     ia.loop = true
     ia.play()

@@ -1,8 +1,9 @@
 // components/study/radio/index.js
+import { StudyModel } from '../../../models/studyModel.js'
 
-const tok = '24.a530492f7418910f32f63eff80a10340.2592000.1560246717.282335-16231541'
-const cuid = 'CC-2F-71-2E-04-C3'
-var ia = ''
+const studyModel = new StudyModel()
+const appKey = '6db82689a464b1be'
+const appScrect = 'vNTZqKd7cNE6E3khXSdHsNE4MoBgWUr8'
 
 Component({
   properties: {
@@ -12,15 +13,17 @@ Component({
 
   data: {
     play: false,
-    refresh: true
+    voiceUrl: null
   },
 
   observers: {
     'word': function (value) {
       this.setData({
-        play: false,
-        voiceUrl: null
+        voiceUrl: null,
+        play: false
       })
+
+      
     }
   },
 
@@ -42,7 +45,7 @@ Component({
       if (this.data.voiceUrl != null) {
         this.playVoice(this.data.voiceUrl)
       } else {
-        this.getZn().then(this.creatVoice).then(res => {
+        this.getVoice(this.data.word).then(res => {
           return this.playVoice(res)
         })
       }
@@ -52,31 +55,26 @@ Component({
       this.triggerEvent('stopPlayVoice', {}, {})
     },
 
-    getZn() {
+    getVoice(word) {
       return new Promise((resolve, reject) => {
-        let zn = this.data.zn.replace(/[\r\n]/g, "")
-        zn = zn.replace(new RegExp("vt.", "g"), ",");
-        zn = zn.replace(new RegExp("vi.", "g"), ",");
-        zn = zn.replace(new RegExp("v.", "g"), ",");
-        zn = zn.replace(new RegExp("n.", "g"), ",");
-        zn = zn.replace(new RegExp("adj.", "g"), ",");
-        zn = zn.replace(new RegExp("adv.", "g"), ",");
-        resolve(`${this.data.word}${zn}`)
+        studyModel.getWordZnVoice(word).then(path => {
+          wx.downloadFile({
+            url: path,
+            success(res) {
+              resolve(res.tempFilePath)
+            },
+            fail(err) {
+              reject(err)
+            }
+          })
+        }).catch(err => {
+          wx.showToast({
+            title: '错误，无语音~',
+            icon: 'none',
+            duration: 2000
+          })
+        })
       })
-    },
-
-    creatVoice(str) {
-     return new Promise((resolve, reject) => {
-       wx.downloadFile({
-         url: `https://wxapi.hotapp.cn/proxy/?appkey=hotapp673337801&url=http://tsn.baidu.com?lan=zh&ctp=1&cuid=${cuid}&tok=${tok}&tex=${encodeURI(encodeURI(str))}&per=1&spd=5&pit=5&aue=3`,
-         success(res) {
-           resolve(res.tempFilePath)
-         },
-         fail(err) {
-           reject(err)
-         }
-       })
-     })
     },
 
     playVoice(path) {

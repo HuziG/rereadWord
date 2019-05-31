@@ -54,6 +54,25 @@ class StudyModel {
     })
   }
 
+  getWordZnVoice(word) {
+    return new Promise((resolve, reject) => {
+      let query = new wx.BaaS.Query()
+
+      query.compare('word', '=', word)
+
+      let Product = new wx.BaaS.TableObject('word_voice')
+      Product.setQuery(query).find().then(res => {
+        if (res.statusCode === 200 && res.data.objects.length != 0) {
+          resolve(res.data.objects[0].path)
+        } else {
+          reject(true)
+        }
+      }, err => {
+        reject(err)
+      })
+    })
+  }
+
   forOrgWordInfo(value) {
     let that = this
     let promiseArr = []
