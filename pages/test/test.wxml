@@ -1,2 +1,9 @@
 <!--pages/test/test.wxml-->
-<button bind:tap="play">play</button>
+<!-- <button bind:tap="play">play</button> -->
+
+<!-- components/conclusion/poster/index.wxml -->
+<canvas canvas-id="customCanvas"></canvas>
+<!-- <view class="bottom-text">图片已保存到相册，可分享给好友</view> -->
+<!-- <view class="next-btn" bind:tap="homeTo">
+  下一步
+</view> -->
