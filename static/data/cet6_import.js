@@ -321,13 +321,11 @@ var cet6_import=[
 
   'deliberately',
   'exclusively',
-  'explicitly',
   'forcibly',
   'formerly',
   'increasingly',
   'inevitably',
   'intentionally',
-  'optimistically',
   'outwardly',
   'presumably',
   'simultaneously',

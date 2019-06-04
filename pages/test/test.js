@@ -39,21 +39,25 @@ Page({
 
     // let arr = Array.from(new Set(cet4.concat(cet4_import).concat(cet6).concat(cet6_import).concat(kaoyan).concat(kaoyan_import)))
 
-    let arr = wx.getStorageSync('error_wordDetail')
+    // let arr = wx.getStorageSync('error_wordDetail')
 
-    let promiseArr = []
-    let i = 0
+    // let promiseArr = []
+    // let i = 0
 
-    let timer = setInterval(() => {
-      if (i === arr.length) {
-        console.log('finish')
-        clearInterval(timer);
-        return
-      }
-      promiseArr.push(this.youdao(arr[i]))
-      console.log(`${i}---${arr[i]} is ok`)
-      i++
-    }, 1000);
+    // let timer = setInterval(() => {
+    //   if (i === arr.length) {
+    //     console.log('finish')
+    //     clearInterval(timer);
+    //     return
+    //   }
+    //   promiseArr.push(this.youdao(arr[i]))
+    //   console.log(`${i}---${arr[i]} is ok`)
+    //   i++
+    // }, 1000);
+
+    this.youdao('optimistically').then(res => {
+      console.log('is ok')
+    })
 
     // console.log(promiseArr)
     // arr.forEach(item => {

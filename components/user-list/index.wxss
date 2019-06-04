@@ -20,3 +20,7 @@
   flex: 1;
   color: #FF3B1D;
 }
+
+.btn::after{
+  border: none;
+}

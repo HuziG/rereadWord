@@ -87,7 +87,7 @@ Component({
               console.log(err)
             }
           }, this)
-        }, 20000);
+        }, 30000);
       })
     },
 

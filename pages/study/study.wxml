@@ -11,7 +11,7 @@
 <view wx:if="{{!loading}}">
   <view class="progress-wrapper">
     <van-progress 
-      percentage="{{(wordIndex+1) * 10}}" 
+      percentage="{{(wordIndex+1) * (100/wordArr.length)}}" 
       color="#FF3B1D" 
       show-pivot="{{false}}" 
       custom-class="van-progress" 

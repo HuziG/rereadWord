@@ -67,9 +67,7 @@ Page({
   },
 
   finishCheck() {
-    this.stopPlayVoice()
     if (this.data.wordIndex + 1 === this.data.wordArr.length) {
-      console.log('finish')
       this.mapWordZn()
       return false
     } else {
@@ -128,5 +126,9 @@ Page({
 
   stopPlayVoice() {
     ia.stop()
+  },
+
+  onUnload() {
+    this.stopPlayVoice()
   }
 })

@@ -4,7 +4,7 @@ const Page = require('../../utils/ald-stat.js').Page;
 Page({
 
   data: {
-    aboutUsPop: true
+    aboutUsPop: false
   },
 
   onLoad: function (options) {
