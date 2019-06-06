@@ -1,6 +1,8 @@
 // pages/sconclusion/sconclusion.js
-import { WordInfoModel } from '../../models/wordInfoModel'
+import { WordInfoModel } from '../../models/wordInfoModel.js'
 import { ClockInModel } from '../../models/clockInModel.js'
+import { getNowTime } from '../../utils/dateUtils.js'
+
 
 const Page = require('../../utils/ald-stat.js').Page;
 
@@ -35,6 +37,10 @@ Page({
   },
 
   drawPoster() { // 海报绘制
+    let postTag = wx.getStorageSync('post_tag') || '***'
+
+    if (postTag === getNowTime()) { return }
+    
     let newDate = new Date()
     clockInModel.getDaysNum().then(res => {
       draw(`${newDate.getFullYear()}.${newDate.getMonth() + 1}`, newDate.getDate(), res)
@@ -87,6 +93,7 @@ Page({
         wx.canvasToTempFilePath({
           canvasId: 'customCanvas',
           success: res => {
+            wx.setStorageSync('post_tag', getNowTime())
             wx.saveImageToPhotosAlbum({
               filePath: res.tempFilePath,
               success: () => {

@@ -64,10 +64,12 @@ Page({
     //   promiseArr.push(this.youdao(item))
     // })
 
-    let newDate = new Date()
-    clockInModel.getDaysNum().then(res => {
-      this.draw(`${newDate.getFullYear()}.${newDate.getMonth() + 1}`, newDate.getDate(), res)
-    })
+    // let newDate = new Date()
+    // clockInModel.getDaysNum().then(res => {
+    //   this.draw(`${newDate.getFullYear()}.${newDate.getMonth() + 1}`, newDate.getDate(), res)
+    // })
+
+    console.log()
   },
 
   draw(date, day, dayNum) {

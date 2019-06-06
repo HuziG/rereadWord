@@ -3,7 +3,7 @@ const App = require('./utils/ald-stat.js').App;
 
 var bugOut = require('./utils/bugOut.min.js')
 bugOut.usePlugins = true   
-bugOut.init(true, '776eb3cf0191f856505673ba8f1e4f38', '0.9.9')
+bugOut.init(true, '776eb3cf0191f856505673ba8f1e4f38', '1.0.0')
 
 App({
   onLaunch: function() {
