@@ -1,12 +1,12 @@
 <!--components/home/rember-info/index.wxml-->
 <view class="container">
   <view class="item heartBeat">
-    <view class="num">{{remWordNum}}</view>
-    <view class="des">已记单词</view>
+    <view class="num">{{daysNum}}</view>
+    <view class="des">累计打卡天数</view>
   </view>
   
   <view class="item heartBeat">
-    <view class="num">{{offWord}}</view>
-    <view class="des">剩余单词</view>
+    <view class="num">{{remWordNum}}</view>
+    <view class="des">已记单词</view>
   </view>
 </view>

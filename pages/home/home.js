@@ -1,5 +1,8 @@
 // pages/home/home.js
+import { ClockInModel } from '../../models/clockInModel.js'
+
 const Page = require('../../utils/ald-stat.js').Page;
+const clockInModel = new ClockInModel()
 const App = new getApp()
 
 Page({
@@ -19,9 +22,12 @@ Page({
 
   init() {
     let user_wordinfo = App.globalData['user_wordinfo']
-    this.setData({
-      mode: user_wordinfo.mode,
-      remWordNum: user_wordinfo.remWordNum
+    clockInModel.getClockInfo().then(res => {
+      this.setData({
+        mode: user_wordinfo.mode,
+        remWordNum: user_wordinfo.remWordNum,
+        daysNum: res.daysNum || 0
+      })
     })
   },
 

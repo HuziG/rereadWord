@@ -5,14 +5,18 @@ import { cet6 } from '../../../static/data/cet6.js';
 import { cet6_import } from '../../../static/data/cet6_import.js';
 import { kaoyan_import } from '../../../static/data/kaoyan_import.js'
 import { kaoyan } from '../../../static/data/kaoyan.js'
+
 import { WordInfoModel } from '../../../models/wordInfoModel.js'
 
 const wordInfoModel = new WordInfoModel()
+const App = getApp()
+
 
 Component({
   properties: {
     remWordNum: Number,
     offWord: Number,
+    daysNum: Number,
     mode: String
   },
 

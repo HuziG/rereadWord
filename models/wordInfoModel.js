@@ -11,6 +11,7 @@ class WordInfoModel {
     return new Promise((resolve, reject) => {
       Product.setQuery(query).find().then(res => {
         if (res.statusCode === 200) {
+          App.globalData['user_wordinfo'] = res.data.objects[0]
           resolve(res.data.objects)
         } else {
           reject(true)

@@ -44,25 +44,24 @@ class ClockInModel {
 
   getDaysNum() {
     return new Promise((resolve, reject) => {
-      this.getClockInfo().then(res => {
-        let dayNum = App.globalData['user_clockIn'].daysNum
-        let nowDay = getNowTime()
-        if (res.lastDate === null) {
-          dayNum = 1
-        }
-        if (res.lastDate != null && changeDate(res.lastDate, 1) === nowDay) {
-          dayNum += 1
-        } else if (res.lastDate != null && res.lastDate === nowDay) {
-          dayNum += 0
-        } else {
-          dayNum = 1
-        }
+      let res = App.globalData['user_clockIn']
+      let dayNum = res.daysNum
+      let nowDay = getNowTime()
+      if (res.lastDate === null) {
+        dayNum = 1
+      }
+      if (res.lastDate != null && changeDate(res.lastDate, 1) === nowDay) {
+        dayNum += 1
+      } else if (res.lastDate != null && res.lastDate === nowDay) {
+        dayNum += 0
+      } else {
+        dayNum = 1
+      }
 
-        this.setClockInfo(nowDay, dayNum).then(res => {
-          resolve(dayNum)
-        }).catch(err => {
-          reject(err)
-        })
+      this.setClockInfo(nowDay, dayNum).then(res => {
+        resolve(dayNum)
+      }).catch(err => {
+        reject(err)
       })
     })
   }

@@ -7,7 +7,11 @@
 
 <mode-cmp mode="{{mode}}"/>
 
-<rember-info-cmp  remWordNum="{{remWordNum}}" mode="{{mode}}" bind:unLock="unLock"/>
+<rember-info-cmp 
+  remWordNum="{{remWordNum}}" 
+  mode="{{mode}}"
+  daysNum="{{daysNum}}" 
+  bind:unLock="unLock"/>
 
 <view class="study-wrapper">
   <van-button 
