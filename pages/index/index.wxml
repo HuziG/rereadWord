@@ -9,8 +9,8 @@
 
   <auth-cmp loading="{{loading}}" bind:getPhoneNumber="getPhoneNumber"/>
 
-  <view class="footer">
+  <!-- <view class="footer">
     登录代表您已经同意
     <view class="a">《单词复读机用户协议》</view>
-  </view>
+  </view> -->
 </view>
