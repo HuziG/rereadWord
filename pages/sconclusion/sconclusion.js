@@ -41,8 +41,8 @@ Page({
 
     if (postTag === getNowTime()) { return }
     
-    let newDate = new Date()
     clockInModel.getDaysNum().then(res => {
+      let newDate = new Date()
       draw(`${newDate.getFullYear()}.${newDate.getMonth() + 1}`, newDate.getDate(), res)
     })
 
