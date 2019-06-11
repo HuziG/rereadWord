@@ -12,6 +12,18 @@
   align-items: center;
   padding-top: 30rpx;
 }
+.word-detail{
+  flex: 8;
+}
+.icon-group{
+  flex: 4;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
 .word{
   font-size: 20pt;
 }
@@ -20,15 +32,11 @@
   color: #8E8B86;
   line-height: 35rpx;
 }
-.icon-sound-fill{
-  font-size: 16pt;
-  color: #FD0102;
-}
 .vocab{
   color: #FD0102;
   font-weight: 700;
 }
-.item{
+.explain-detail .item{
   padding-top: 50rpx;
 }
 .title{
@@ -47,4 +55,32 @@
 
 .icon-sound-fill:active{
   opacity: .5;
+}
+
+
+
+.iconfont{
+  font-size: 16pt;
+  color: #FD0102;
+}
+
+.run-rotate{
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate{
+  0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }

@@ -17,7 +17,11 @@ Page({
   },
 
   onShow() {
-    this.init()
+
+    // 增加了 timeout
+    setTimeout(() => {
+      this.init()
+    }, 150);
   },
 
   init() {

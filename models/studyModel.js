@@ -107,6 +107,36 @@ class StudyModel {
     });
     return value
   }
+
+  // ------------------------------------ TEST -------------------------------------------
+
+  getWordSentenceArr(data) {
+    let that = this
+    let promiseArr = []
+
+    data.forEach(item => {
+      promiseArr.push(creatrPromise(item.id))
+    })
+
+    return new Promise((resolve, reject) => {
+      Promise.all(promiseArr).then(res => {
+        let rData = filterArr(res)
+        resolve(rData)
+      })
+    })
+
+    function creatrPromise(id) {
+      return that.getWordSentence(id)
+    }
+
+    function filterArr(data) {
+      data = data.map(item => {
+        let _item = item[0]
+        return { annotation: _item.annotation, translation: _item.translation, word: _item.word }
+      })
+      return data
+    }
+  }
 }
 
 export {

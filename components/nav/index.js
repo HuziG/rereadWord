@@ -1,5 +1,8 @@
 // components/nav/index.js
 Component({
+  options: {
+    multipleSlots: true 
+  },
   externalClasses: ['line-class'],
   properties: {
     mode: Number,
@@ -8,7 +11,13 @@ Component({
 
   
   data: {
-    barHeight: wx.getSystemInfoSync().statusBarHeight
+    _barHeight: wx.getSystemInfoSync().statusBarHeight,
+    get barHeight() {
+      return this._barHeight;
+    },
+    set barHeight(value) {
+      this._barHeight = value;
+    },
   },
   
   methods: {

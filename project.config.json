@@ -4,13 +4,20 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
@@ -40,7 +47,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -50,7 +57,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "index",
 					"pathName": "pages/index/index",
 					"query": "",
@@ -95,6 +102,13 @@
 					"id": -1,
 					"name": "user",
 					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "studyExam",
+					"pathName": "pages/study-exam/study-exam",
 					"scene": null
 				}
 			]

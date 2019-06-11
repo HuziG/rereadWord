@@ -31,6 +31,11 @@ Page({
 
   onLoad: function (options) {
     this.filterWord()
+    this.setProgressTop()
+  },
+
+  onUnload() {
+    this.stopPlayVoice()
   },
 
   unKnowHandle() {
@@ -77,7 +82,7 @@ Page({
 
   mapWordZn() {
     let arr = this.data.wordArr.map(item => {
-      return { word: item.wordExplatin.content, zn: item.wordExplatin.definition}
+      return { word: item.wordExplatin.content, zn: item.wordExplatin.definition, id: item.wordExplatin.conent_id }
     })
     App.globalData.conslusionWord = arr
     wx.redirectTo({
@@ -90,7 +95,9 @@ Page({
     let lib = this.data.wordLibrary.find(item => {
       return item.name === user_wordinfo.mode
     })
-    this.data.wordArr = lib.key.slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum + 10)
+
+    // lib.key changeto lib['key']
+    this.data.wordArr = lib['key'].slice(user_wordinfo.remWordNum, user_wordinfo.remWordNum + 10)
 
     studyModel.forOrgWordInfo(this.data.wordArr).then(res => {
       this.setData({
@@ -109,17 +116,25 @@ Page({
     })
   },
 
-  initPlayVoice(e) { // 渲染播放音频
+  initPlayVoice(e) { // 初始化播放音频
     ia.src = e.detail.mp3_url
     ia.loop = false
     ia.play()
   },
 
   loopPlayVoice(e) {
-    this.setData({
-      znPopup: true
-    })
-    ia.src = e.detail.mp3_url
+    this.stopPlayVoice()
+    let mp3Url = e.detail.mp3_url
+    if (mp3Url.indexOf('shanbay') === -1) {
+      this.setData({
+        redoRotate: false
+      })
+    } else {
+      this.setData({
+        play: false
+      })
+    }
+    ia.src = mp3Url
     ia.loop = true
     ia.play()
   },
@@ -128,7 +143,12 @@ Page({
     ia.stop()
   },
 
-  onUnload() {
-    this.stopPlayVoice()
+  setProgressTop() { // 设置 progress 高度
+    let selQuery = wx.createSelectorQuery().in(this)
+    selQuery.select('#navCmp').boundingClientRect((rect) => {
+      this.setData({
+        progressTop: rect.height
+      })
+    }).exec()
   }
 })

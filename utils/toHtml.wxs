@@ -1,0 +1,17 @@
+var getText = function (value) {
+  var _value = value.replace("<vocab>", "<span class='vocab'>")
+  _value = _value.replace("</vocab>", "</span>")
+  return _value
+}
+
+var getBr = function (value) {
+  while (value.indexOf(';') != -1) {
+    value = value.replace(';', " ；<br />")
+  }
+  return value
+}
+
+module.exports = {
+  getText: getText,
+  getBr: getBr
+}

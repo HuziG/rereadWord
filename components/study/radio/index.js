@@ -8,11 +8,14 @@ const appScrect = 'vNTZqKd7cNE6E3khXSdHsNE4MoBgWUr8'
 Component({
   properties: {
     word: String,
-    zn: String
+    zn: String,
+    play: {
+      type: Boolean,
+      value: false
+    }
   },
 
   data: {
-    play: false,
     voiceUrl: null
   },
 
@@ -22,8 +25,6 @@ Component({
         voiceUrl: null,
         play: false
       })
-
-      
     }
   },
 

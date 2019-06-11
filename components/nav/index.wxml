@@ -13,4 +13,3 @@
 </view>
 
 <view style="height:{{barHeight + 45}}px;"></view>
-

@@ -1,0 +1,56 @@
+/* pages/study-exam/study-exam.wxss */
+@import '../../utils/iconfont.wxss';
+
+page{
+  background-color: #F6F6F6;
+  overflow: hidden;
+}
+.progress-wrapper{
+  position: fixed;
+  width: 100%;
+  left: 0;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32rpx;
+  box-sizing: border-box;
+  font-size: 15pt;
+}
+.sentence{
+  flex: 7;
+  justify-content: center;
+}
+.option-group{
+  flex: 5;
+  justify-content: space-around;
+}
+.button-nav-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 95%;
+}
+
+.flex-center{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skip-btn{
+  position: absolute;
+  right: 15rpx;
+  top: 200rpx;
+  border-radius: 5px;
+  padding: 10rpx 15rpx;
+  background-color: #FF5C63;
+  color: rgba(255, 255, 255, 1);
+  font-size: 11px;
+  text-align: center;
+  box-shadow: 0px 0px 0px 0px rgba(255, 152, 0, 1);
+}
+
+.skip-btn:active{
+  opacity: .5;
+}

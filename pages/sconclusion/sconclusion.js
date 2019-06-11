@@ -40,7 +40,7 @@ Page({
     let postTag = wx.getStorageSync('post_tag') || '***'
 
     if (postTag === getNowTime()) { return }
-    
+
     clockInModel.getDaysNum().then(res => {
       let newDate = new Date()
       draw(`${newDate.getFullYear()}.${newDate.getMonth() + 1}`, newDate.getDate(), res)

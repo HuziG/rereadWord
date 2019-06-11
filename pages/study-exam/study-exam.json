@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "nav-cmp": "/components/nav/index",
+    "van-progress": "/static/vant-weapp/progress/index",
+    "sentence-cmp": "/components/study-exam/sentence/index",
+    "option-group-cmp": "/components/study-exam/option-group/index",
+    "button-nav-cmp": "/components/study-exam/button-nav/index"
+  }
+}

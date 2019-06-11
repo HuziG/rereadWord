@@ -3,19 +3,24 @@
 <view class="container">
 
   <view class="header">
-    <view>
+    <view class="word-detail">
       <view class="word">{{word}}</view>
       <view class="sound">/{{pron}}/</view>
     </view>
-    <view>
-      <view class="iconfont icon-sound-fill" bind:tap="playVoice"></view>
+    <view class="icon-group">
+      <view>
+        <view class="item iconfont icon-sync {{redoRotate===false?'':'run-rotate'}}" bind:tap="loopWordVoice"></view>
+      </view>
+      <view>
+        <view class="item iconfont icon-sound-fill" bind:tap="playVoice"></view>
+      </view>
     </view>
   </view>
 
-  <view wx:if="{{explainShow}}">
+  <view class="explain-detail" wx:if="{{explainShow}}">
     <view class="item">
       <view class="title">例句</view>
-      <block wx:for="{{wordSentence}}" wx:key="*this">
+      <block wx:for="{{wordSentence}}" wx:key="{{index}}">
         <view class="sentence-wrapper">
           <rich-text class="content" nodes="{{filterAnnotation.getText(item.annotation)}}"></rich-text>
           <view class="sentence-tran">{{item.translation}}</view>
@@ -36,22 +41,4 @@
 
 </view>
 
-<wxs module="filterAnnotation">
-var getText = function (value) {
-  var _value = value.replace("<vocab>","<span class='vocab'>")
-      _value = _value.replace("</vocab>","</span>")
-  return  _value
-}
-
-var getBr = function (value) {
-  while(value.indexOf(';') != -1) {
-    value =  value.replace(';'," ；<br />")
-  }
-  return value
-}
-
-module.exports = {
-    getText: getText,
-    getBr: getBr
-}
-</wxs>
+<wxs module="filterAnnotation" src="../../../utils/toHtml.wxs"></wxs>

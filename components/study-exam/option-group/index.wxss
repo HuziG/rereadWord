@@ -1,0 +1,60 @@
+/* components/study-exam/option-group/index.wxss */
+.option-group{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.option-item{
+  width: 50vw;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #FF9801;
+  text-align: center;
+  border: 1px solid #3B3B45;
+  border-radius: 20rpx; 
+  font-size: 11pt;
+}
+.right{
+  color: #3B3B45;
+  background-color: #07EBC2;
+  border: 1px solid transparent;
+  animation: .8s right forwards;
+}
+.wrong{
+  border: 1px solid transparent;
+  animation: .8s wrong forwards;
+}
+
+@keyframes wrong{
+  0%{
+    background-color: transparent;
+  }
+  50%{
+    color: #3B3B45;
+    background-color: #FF311D;
+    border: 1px solid #FF311D;
+  }
+  100%{
+    color: #FF9801;
+    background-color: transparent;
+    border: 1px solid #3B3B45;
+  }
+}
+
+
+@keyframes right{
+  from{
+    background-color: transparent;
+  }
+  to{
+    color: #3B3B45;
+    background-color: #07EBC2;
+    border: 1px solid #07EBC2;
+  }
+}
+
+.option-item:active{
+  opacity: .5;
+}

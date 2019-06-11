@@ -1,5 +1,9 @@
 <!--pages/study/study.wxml-->
-<nav-cmp mode="2" title="学习模式" />
+<nav-cmp mode="2" title="学习模式" id="navCmp" />
+
+<view class="progress-wrapper" style="top:{{progressTop}}px;">
+  <van-progress percentage="{{(wordIndex+1) * (100/wordArr.length)}}" color="#FF9801" show-pivot="{{false}}" custom-class="van-progress" />
+</view>
 
 <view class="flex-container" wx:if="{{loading}}">
   <view class="flex-container loading-text">
@@ -9,19 +13,14 @@
 </view>
 
 <view wx:if="{{!loading}}">
-  <view class="progress-wrapper">
-    <van-progress 
-      percentage="{{(wordIndex+1) * (100/wordArr.length)}}" 
-      color="#FF3B1D" 
-      show-pivot="{{false}}" 
-      custom-class="van-progress" 
-      />
-  </view>
   
-  <explain-info-cmp 
+  <explain-cmp 
     wordCon="{{wordCon}}" 
     explainShow="{{explainShow}}" 
+    redoRotate="{{redoRotate}}"
     bind:initPlayVoice="initPlayVoice"
+    bind:loopPlayVoice="loopPlayVoice"
+    bind:stopPlayVoice="stopPlayVoice"
     />
   
   <view style="height:140rpx;"></view>
@@ -36,7 +35,8 @@
 
       <voice-cmp 
         word="{{wordCon.wordExplatin.content}}" 
-        zn="{{wordCon.wordExplatin.definition}}" 
+        zn="{{wordCon.wordExplatin.definition}}"
+        play="{{play}}" 
         bind:loopPlayVoice="loopPlayVoice"
         bind:stopPlayVoice="stopPlayVoice"
       />

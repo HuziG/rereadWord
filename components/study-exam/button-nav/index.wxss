@@ -1,0 +1,17 @@
+/* components/study-exam/button-nav/index.wxss */
+@import '../../study/button';
+@import '../../../utils/iconfont';
+
+.voice-btn{
+  background-color: transparent;
+}
+.icon-sound-fill{
+  color: #FF9801 !important;
+  font-size: 14pt !important;
+}
+.pre{
+  color: #333;
+}
+.next{
+  color: #333;
+}

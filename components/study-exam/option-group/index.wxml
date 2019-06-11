@@ -1,0 +1,26 @@
+<!--components/study-exam/option-group/index.wxml-->
+<view class="option-group">
+  <!-- <view class="option-item wrong">1</view>
+  <view class="option-item right">2</view>
+  
+  <view class="option-item">4</view> -->
+
+  <block wx:for="{{optionArr}}" wx:key="{{index}}">
+    <view 
+      class="option-item {{answerDetail.index === index ? viewHandle.resultRender(answerDetail) : ''}}" 
+      data-index="{{index}}" 
+      bind:tap="optionClick"
+    >
+      {{item}}
+    </view>
+  </block>
+</view>
+
+<wxs module="viewHandle">
+  var resultRender = function(data) {
+    return data.correct === true ? 'right' : 'wrong'
+  }
+  module.exports = {
+    resultRender: resultRender
+  };
+</wxs>
