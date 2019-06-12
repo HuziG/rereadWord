@@ -137,6 +137,24 @@ class StudyModel {
       return data
     }
   }
+
+  getSentenceVoice(sentence) { // 获取例句语音文件
+    return new Promise((resolve, reject) => {
+      wx.downloadFile({
+        url: `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(sentence)}&le=eng`,
+        success: (res) => {
+          if (res.statusCode === 200) {
+            resolve(res.tempFilePath)
+          } else {
+            resolve(null)
+          }
+        },
+        fail: () => {
+          resolve(null)
+        }
+      })
+    })
+  } 
 }
 
 export {

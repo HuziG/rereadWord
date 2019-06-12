@@ -5,33 +5,27 @@
   <van-progress percentage="{{(wordIndex+1) * (100/examData.length)}}" color="#FF9801" show-pivot="{{false}}" custom-class="van-progress" />
 </view>
 
-<!-- notice：wordArr -->
-<view class="main-container" style="height:{{winHeight - 70}}px;">
-  <view class="sentence flex-center">
-    <sentence-cmp  annotation="{{annotation}}" translation="{{translation}}" ansRight="{{ansRight}}"/>
-  </view>
-
-  <view class="option-group">
-
-    <view style="height: 100%;" wx:if="{{!ansRight}}">
-      <option-group-cmp answer="{{answer}}" bind:ansRightHandle="ansRightHandle"/>
-    </view>
-
-    <view class="button-nav-wrapper" wx:if="{{ansRight}}">
-      <button-nav-cmp 
-        wordIndex="{{wordIndex}}" 
-        bind:playAnnotationVoice="playAnnotationVoice" 
-        bind:nextHandle="nextHandle"
-        bind:preHandle="preHandle"
-      />
-    </view>    
-
+<view class="flex-container" wx:if="{{loading}}">
+  <view class="flex-container loading-text">
+    <view class="loading-title">组织试题中...</view>
+    <view class="loading-des">如果等待时间过长，可以选择重启应用哦~</view>
   </view>
 </view>
 
-<view 
-  class="skip-btn" 
-  style="top:{{progressTop + 15}}px;"
-  bind:tap="nextHandle"
-  >这个句子有问题?
+<view wx:if="{{!loading}}">
+    <!-- notice：wordArr -->
+  <view class="main-container" style="height:{{winHeight - 70}}px;">
+    <view class="sentence flex-center">
+      <sentence-cmp annotation="{{annotation}}" translation="{{translation}}" ansRight="{{ansRight}}" />
+    </view>
+    <view class="option-group">
+      <view style="height: 100%;" wx:if="{{!ansRight}}">
+        <option-group-cmp answer="{{answer}}" bind:ansRightHandle="ansRightHandle" />
+      </view>
+      <view class="button-nav-wrapper" wx:if="{{ansRight}}">
+        <button-nav-cmp wordIndex="{{wordIndex}}" bind:playAnnotationVoice="playAnnotationVoice" bind:nextHandle="nextHandle" bind:preHandle="preHandle" />
+      </view>
+    </view>
+  </view>
+  <view class="skip-btn" style="top:{{progressTop + 15}}px;" bind:tap="nextHandle">这个句子有问题?</view>
 </view>

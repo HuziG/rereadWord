@@ -30,7 +30,7 @@ Page({
   setWordInfoTable() { // 用户已注册，设置user_wordinfo的表列数据
     wordInfoModel.getWordTableInfo().then(res => {
       if (res[0].mode === null) {
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/mode/mode'
         })
       } else {

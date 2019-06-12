@@ -19,6 +19,7 @@ Page({
   onLoad: function () {
     this.renderView()
     this.drawPoster()
+    this.setTodayWord()
   },
 
   renderView() {
@@ -120,5 +121,30 @@ Page({
         showPoster: true
       })
     }, 5000);
+  },
+
+  setTodayWord() {
+    let that = this
+    let temData = wx.getStorageSync('today_word')
+    if (temData === '') {
+      resert()
+    } else {
+      if (temData.date === getNowTime()) {
+        this.data.wordArr.forEach(item => {
+          temData.data.push(item)
+        })
+      } else {
+        resert()
+      }
+    }
+
+    wx.setStorageSync('today_word', temData)
+
+    function resert() {
+      temData = { date: getNowTime(), data: [] }
+      that.data.wordArr.forEach(item => {
+        temData.data.push(item)
+      })
+    }
   }
 })

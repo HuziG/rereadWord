@@ -13,11 +13,10 @@ Page({
   },
 
   onLoad: function (options) {
-    
+
   },
 
   onShow() {
-
     // 增加了 timeout
     setTimeout(() => {
       this.init()

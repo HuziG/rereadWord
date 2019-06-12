@@ -1,8 +1,6 @@
 // pages/study-exam/study-exam.js
 import { StudyModel } from "../../models/studyModel.js";
 
-import { studyexam_mock_data } from "../../static/mock-data/studyexamData";
-
 const ia = wx.createInnerAudioContext()
 const studyModel = new StudyModel()
 
@@ -10,7 +8,8 @@ Page({
 
   data: {
     winHeight: wx.getSystemInfoSync().windowHeight,
-    wordIndex: 0
+    wordIndex: 0,
+    loading: true
   },
 
   onLoad: function () {
@@ -23,8 +22,9 @@ Page({
   },
 
   initData() { // 初始化渲染信息
-    studyModel.getWordSentenceArr(studyexam_mock_data).then(res => {
+    studyModel.getWordSentenceArr(wx.getStorageSync('today_word').data).then(res => {
       this.setData({
+        loading: false,
         examData: res
       })
       this.renderQuestion(this.data.wordIndex)
@@ -44,6 +44,7 @@ Page({
   },
 
   ansRightHandle() { // 正确答案操作
+    this.playCorrectVoice()
     setTimeout(() => {
       this.setData({
         ansRight: true
@@ -54,10 +55,6 @@ Page({
         ia.play()
       } 
     }, 800)
-  },
- 
-  playAnnotationVoice() { // 播放例句语音
-    ia.play()
   },
 
   preHandle() { // 上一个
@@ -78,6 +75,7 @@ Page({
       })
       return
     }
+
     ia.stop()
     this.setData({
       wordIndex: temIndex,
@@ -87,36 +85,27 @@ Page({
   },
 
   setAnnotationHandle(annotation) { // 例句语音操作
-    annotation = this.annotationHand(annotation)
-    this.getSentenceVoice(annotation).then(res => {
+    annotation = annotationHand(annotation)
+    studyModel.getSentenceVoice(annotation).then(res => {
       this.setData({
         annotationUrl: res
       })
     })
+
+    function annotationHand(value) { // 例句信息 再处理， 将vocab标签剔除
+      let _value = value.replace("<vocab>", "")
+      _value = _value.replace("</vocab>", "")
+      return _value
+    }
   },
 
-  annotationHand(value) { // 例句信息 再处理， 将vocab标签剔除
-    let _value = value.replace("<vocab>", "")
-    _value = _value.replace("</vocab>", "")
-    return _value
-  }, 
+  playAnnotationVoice() {
+    ia.play()
+  },
 
-  getSentenceVoice(sentence) { // 获取例句语音文件
-    return new Promise((resolve, reject) => {
-      wx.downloadFile({
-        url: `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(sentence)}&le=eng`,
-        success: (res) => {
-          if (res.statusCode === 200) {
-            resolve(res.tempFilePath)
-          } else {
-            resolve(null)
-          }
-        },
-        fail: () => {
-          resolve(null)
-        }
-      })
-    })
+  playCorrectVoice() { // 回答正确播放的音效
+    ia.src = 'http://fjdx.sc.chinaz.net/Files/DownLoad/sound1/201801/9677.mp3'
+    ia.play()
   },
 
   setProgressTop() { // 设置progress 的顶部位置
