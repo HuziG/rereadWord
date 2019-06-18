@@ -1,3 +1,7 @@
 /* components/study/radio/index.wxss */
 @import "../../../utils/iconfont.wxss";
 @import "../button.wxss";
+
+.voice-wrapper{
+  background-color: #FE9903;
+}

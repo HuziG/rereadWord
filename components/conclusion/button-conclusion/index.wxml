@@ -5,7 +5,7 @@
     round
     custom-class="defined-btn" 
     disabled="{{disalbed}}" 
-    type="danger"
+    type="warning"
     bind:tap="nextPage" 
     loading="{{loading}}"
   >
@@ -14,7 +14,7 @@
       <block wx:if="{{!nextShow}}">
         请再看下单词吧-{{second}} S
       </block>
-      <block wx:if="{{nextShow}}" bind:tap="homeTo">
+      <block wx:if="{{nextShow}}">
         下一步
       </block>
     </block> 

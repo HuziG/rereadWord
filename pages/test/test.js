@@ -1,6 +1,4 @@
 //index.js
-import { hex_md5 } from '../../utils/md5.js'
-
 import { cet4 } from '../../static/data/cet4.js';
 import { cet4_import } from '../../static/data/cet4_import.js';
 import { cet6 } from '../../static/data/cet6.js';

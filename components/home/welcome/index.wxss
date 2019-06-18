@@ -1,7 +1,0 @@
-/* components/home/welcome/index.wxss */
-.title{
-  font-size: 18pt;
-  color: #FF3B1D;
-  padding: 10vh 0;
-  text-align: center;
-}

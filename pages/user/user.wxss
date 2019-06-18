@@ -1,17 +1,30 @@
 /* pages/user/user.wxss */
-.aboutus-popup{
-  background-color: #FF3B1D !important;
+.nav-class{
+  background-color: #FF9801;
   color: #fff;
-  padding: 0 80rpx 50rpx 60rpx;
-  border-top-right-radius: 10rpx;
-  border-bottom-right-radius: 10rpx;
 }
-.item{
-  margin-top:50rpx;
+
+.container{
+  position: absolute;
+  width: 100vw;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.title{
+.container .item{
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.item .title{
   font-size: 14pt;
+  color: #FF9801;
+  font-weight: 700;
+  padding-bottom: 20rpx;
 }
-.des{
-  font-size: 12pt;
+.item .des{
+  font-size: 11pt;
 }

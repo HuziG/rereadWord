@@ -34,7 +34,7 @@ Page({
           url: '/pages/mode/mode'
         })
       } else {
-        wx.switchTab({
+        wx.redirectTo({
           url: '/pages/home/home'
         })
       }
@@ -47,7 +47,7 @@ Page({
     userModel.registerUser(e.detail.value).then(res => { // 用户注册
       this.setData({ loading: false })
 
-      wx.navigateTo({
+      wx.redirectTo({
         url: '/pages/mode/mode'
       })
     })

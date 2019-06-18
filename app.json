@@ -16,26 +16,6 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "tabBar": {
-    "borderStyle": "black",
-    "backgroundColor": "#fff",
-    "selectedColor": "#FF3B1D",
-    "color": "#666666",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "iconPath": "static/img/home@unselect.png",
-        "selectedIconPath": "static/img/home@select.png",
-        "text": "学习"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "iconPath": "static/img/user@unselect.png",
-        "selectedIconPath": "static/img/user@select.png",
-        "text": "我的"
-      }
-    ]
-  },
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 20000

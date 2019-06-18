@@ -16,7 +16,7 @@ Page({
 
   setMode(e) { // 设置mode
     wordInfoModel.setWordMode(e.detail.mode).then(res => {
-      wx.switchTab({
+      wx.redirectTo({
         url: '/pages/home/home'
       })
     })

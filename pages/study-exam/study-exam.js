@@ -70,7 +70,7 @@ Page({
   nextHandle() { // 下一个
     let temIndex = ++this.data.wordIndex
     if (temIndex === this.data.examData.length) {
-      wx.switchTab({
+      wx.redirectTo({
         url: '/pages/home/home'
       })
       return

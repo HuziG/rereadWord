@@ -39,7 +39,7 @@ Component({
       if (this.data.disalbed) {
         return
       }
-      wx.switchTab({
+      wx.redirectTo({
         url: '/pages/home/home'
       })
     }

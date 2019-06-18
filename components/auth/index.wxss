@@ -7,6 +7,7 @@
 }
 .defind-btn{
   width: 400rpx;
+  background-color: #FE9903 !important;
 }
 .des{
   margin-top: 15rpx;

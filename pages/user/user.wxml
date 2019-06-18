@@ -1,21 +1,19 @@
 <!--pages/user/user.wxml-->
-<nav-cmp mode="1" title="(๑•̀ㅂ•́)و✧" />
+<nav-cmp mode="2" title="关于我们" out-class="nav-class"/>
 
-<user-list-cmp bind:showAboutUs="showAboutUs"/>
+<view class="container">
+  <view class="item">
+    <view class="title">简单介绍</view>
+    <view class="des">就是爱做产品，爱折腾</view>
+  </view>
 
-<van-popup 
-  show="{{ aboutUsPop }}" 
-  position="left"
-  bind:close="showAboutUs"
-  custom-class="aboutus-popup"
-  >
+  <view class="item">
+    <view class="title">Q群</view>
+    <view class="des">101578706</view>
+  </view>
+
   <view class="item">
     <view class="title">联系邮箱</view>
     <view class="des">ceo-zdj@codesjump.com</view>
   </view>
-  
-  <view class="item">
-    <view class="title">微信</view>
-    <view class="des">kejiachuangyi</view>
-  </view>
-</van-popup>
+</view>

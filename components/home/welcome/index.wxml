@@ -1,2 +1,0 @@
-<!--components/home/welcome/index.wxml-->
-<view class="title">{{title}}</view>

@@ -3,7 +3,7 @@ Component({
   options: {
     multipleSlots: true 
   },
-  externalClasses: ['line-class'],
+  externalClasses: ['out-class'],
   properties: {
     mode: Number,
     title: String
@@ -25,6 +25,10 @@ Component({
       wx.navigateBack({
         delta: 1
       })
+    },
+
+    showLeftMenu() { 
+      this.triggerEvent('showLeftMenu', {}, {})
     }
   }
 })

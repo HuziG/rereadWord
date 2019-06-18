@@ -1,7 +1,13 @@
 <!--components/home/mode/index.wxml-->
 <view class="container">
-  <text class="mode-title">{{modeFilter.getLevelName(mode)}}</text>
-  <view class="change-mode-btn" bind:tap="modeTo">修改计划</view>
+  <view class="change-mode-wrapper">
+    <text class="title">学习计划</text>
+    <view class="changeModeBtn" bind:tap="modeTo">修改计划</view>
+  </view>
+  <view class="mode-title-wrapper">
+    <text class="l-title">{{modeFilter.getLevelName(mode)}}</text>
+    <text class="r-title">10/Day</text>
+  </view>
 </view>
 
 <wxs module="modeFilter">

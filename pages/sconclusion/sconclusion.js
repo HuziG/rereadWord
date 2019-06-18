@@ -53,7 +53,7 @@ Page({
       let dateTextDis = ctx.measureText(date).width > 37 ? 22 : 27
       let dayTextDis = ctx.measureText(day).width > 11 ? 40 : 47
 
-      ctx.setFillStyle('#FD0102')
+      ctx.setFillStyle('#FF9801')
       ctx.fillRect(0, 0, 280, 400)
 
       ctx.setStrokeStyle('#fff')
@@ -123,28 +123,13 @@ Page({
     }, 5000);
   },
 
-  setTodayWord() {
-    let that = this
+  setTodayWord() { // 设置今日已记单词
     let temData = wx.getStorageSync('today_word')
-    if (temData === '') {
-      resert()
-    } else {
-      if (temData.date === getNowTime()) {
-        this.data.wordArr.forEach(item => {
-          temData.data.push(item)
-        })
-      } else {
-        resert()
-      }
-    }
+    
+    this.data.wordArr.forEach(item => {
+      temData.data.push(item)
+    })
 
-    wx.setStorageSync('today_word', temData)
-
-    function resert() {
-      temData = { date: getNowTime(), data: [] }
-      that.data.wordArr.forEach(item => {
-        temData.data.push(item)
-      })
-    }
+    wx.setStorageSync('today_word', temData);
   }
 })

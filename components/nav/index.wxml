@@ -1,15 +1,33 @@
 <!--components/nav/index.wxml-->
-<view class="main-container line-class" style="padding-top: {{barHeight}}px;">
-  <view wx:if="{{mode === 0}}"></view>
 
-  <view class="flex-wrapper" wx:if="{{mode === 1}}">
-    <view class="title">{{title}}</view>
-  </view>
+<!-- mode 0 无任何内容 
+      mode 1 标题 导航
+        mode 2 返回 + 标题 导航
+          mode 3 home页专属导航
+-->
 
-  <view class="flex-wrapper" wx:if="{{mode === 2}}">
-    <view class="iconfont icon-arrowleft" bind:tap="backTo"></view>
-    <view class="title">{{title}}</view>
+<view wx:if="{{mode != 5}}">
+  <view class="main-container  out-class" style="padding-top: {{barHeight}}px;">
+    <view wx:if="{{mode === 0}}"></view>
+    <view class="flex-wrapper" wx:if="{{mode === 1}}">
+      <view class="title">{{title}}</view>
+    </view>
+    <view class="flex-wrapper" wx:if="{{mode === 2}}">
+      <view class="iconfont icon-arrowleft" bind:tap="backTo"></view>
+      <view class="title">{{title}}</view>
+    </view>
+    <view class="flex-wrapper home-nav-wrapper" wx:if="{{mode === 5}}">
+      <view class="iconfont icon-menu"></view>
+    </view>
   </view>
 </view>
 
-<view style="height:{{barHeight + 45}}px;"></view>
+<view 
+  class="flex-wrapper home-nav-wrapper" 
+  wx:if="{{mode === 5}}" 
+  style="height:{{barHeight + 45}}px;padding-top: {{barHeight}}px;">
+  <view class="iconfont icon-menu" bind:tap="showLeftMenu"></view>
+</view>
+
+<view style="height:{{barHeight + 45}}px;background-color:{{mode === 5 ? '#FF9801' : '#FFF'}};"></view>
+

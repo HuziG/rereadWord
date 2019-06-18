@@ -16,7 +16,6 @@ Component({
   properties: {
     remWordNum: Number,
     offWord: Number,
-    daysNum: Number,
     mode: String
   },
 
@@ -28,7 +27,7 @@ Component({
       { name: 'cet6_import', key: cet6_import },
       { name: 'kaoyan_import', key: kaoyan_import },
       { name: 'kaoyan', key: kaoyan }
-    ]
+    ],
   },
 
   observers: {
@@ -39,7 +38,6 @@ Component({
       })
       let libLength = lib.key.length
       let offWord = libLength - this.data.remWordNum
-
       if (offWord <= 0)  {
         wordInfoModel.initWordInfo().then(res => {
           wx.showModal({
@@ -55,7 +53,6 @@ Component({
             }
           })
         })
-        return 
       } else {
         this.setData({
           offWord
@@ -66,7 +63,22 @@ Component({
     }
   },
 
-  methods: {
+  ready() {
+    setTimeout(() => {
+      this.initData()
+    }, 150);
+  },
 
+  methods: {
+    initData() {
+      let user_wordinfo = App.globalData['user_wordinfo']
+      let todayWordNum = wx.getStorageSync('today_word').data.length
+
+      this.setData({
+        remWordNum: user_wordinfo.remWordNum,
+        mode: user_wordinfo.mode,
+        todayWordNum: todayWordNum
+      })
+    }
   }
 })

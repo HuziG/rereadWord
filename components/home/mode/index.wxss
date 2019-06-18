@@ -1,24 +1,38 @@
 /* components/home/mode/index.wxss */
-.container{
+.change-mode-wrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20rpx;
-  border-bottom: 1px solid #BBBBBB;
 }
-.mode-title{
-  color: #FF3B1D;
+.title{
+  font-size: 14pt;
   font-weight: 700;
-  font-size: 10pt;
 }
-.change-mode-btn{
+.changeModeBtn{
   display: inline;
-  padding: 5rpx 8rpx;
-  border: 1px solid #B5B5B5;
-  border-radius: 10em;
+  background-color: #FF5C63;
+  color: #fff;
   font-size: 9pt;
-  color: #B5B5B5;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
 }
-.change-mode-btn:active{
+.mode-title-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(100, 102, 99, 1);
+  font-size: 11pt;
+  padding-top: 30rpx;
+}
+.mode-title-wrapper .r-title{
+  font-size: 9pt;
+}
+.mode-title-wrapper .l-title{
+  font-size: 11pt;
+}
+
+.changeModeBtn:active{
   opacity: .5;
 }

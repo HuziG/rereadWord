@@ -1,0 +1,9 @@
+<!--components/home/button-nav/index.wxml-->
+<view class="button-group">
+  <button 
+    class="start-study-btn" 
+    bind:tap="toStudy"
+    >开始学习</button>
+
+  <button-exam-cmp todayWordInfo="{{todayWordInfo}}"/>
+</view>

@@ -2,8 +2,7 @@
 <view class="container">
   <van-button round 
     bindgetphonenumber="getPhoneNumber"
-    custom-class="defined-btn"
-    type="danger" 
+    type="warning"
     loading="{{loading}}" 
     open-type="getPhoneNumber"
     disabled="{{loading}}">

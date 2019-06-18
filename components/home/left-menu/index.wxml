@@ -1,0 +1,14 @@
+<!--components/home/left-menu/index.wxml-->
+<view class="container" style="margin-top:{{barHeight + 30}}px;">
+  <view class="avatar">
+    <image class="" src="" />
+  </view>
+
+  <view class="menu-list">
+    <button open-type="feedback">问题反馈</button>
+    <button open-type="contact">联系客服</button>
+    <button bind:tap="userPageTo">关于我们</button>
+  </view>
+
+  <view class="footer-tag">@单词复读机</view>
+</view>

@@ -1,0 +1,44 @@
+/* components/home/left-menu/index.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.avatar image{
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.menu-list{
+  margin-top: 30rpx;
+}
+.menu-list button{
+  background-color: transparent;
+  margin: 30rpx 0;
+  color: #333;
+  font-size: 12pt;
+}
+.menu-list button::after{
+  outline: none;
+  border: none;
+}
+.menu-list button:active{
+  opacity: .5;
+}
+
+.footer-tag{
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FF9801;
+  font-size: 9pt;
+}

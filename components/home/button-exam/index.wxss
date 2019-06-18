@@ -1,0 +1,14 @@
+/* components/home/button-exam/index.wxss */
+.restudy-btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10px;
+  background-color: #578DF7;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  margin: 0px !important;
+}
+.restudy-btn::after{
+  border: none;
+}

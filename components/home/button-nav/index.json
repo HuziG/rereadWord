@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "button-exam-cmp": "/components/home/button-exam/index"
+  }
+}

@@ -1,5 +1,5 @@
 <!--pages/sconclusion/sconclusion.wxml-->
-<nav-cmp mode="1" title="小结界面"  line-class="line"/>
+<nav-cmp mode="1" title="小结界面" out-class="line"/>
 
 <conclusion-cmp  wordArr="{{wordArr}}"/>
 

@@ -3,10 +3,15 @@ const App = require('./utils/ald-stat.js').App;
 
 var bugOut = require('./utils/bugOut.min.js')
 bugOut.usePlugins = true   
-bugOut.init(true, '776eb3cf0191f856505673ba8f1e4f38', '1.0.0')
+bugOut.init(true, '776eb3cf0191f856505673ba8f1e4f38', '2.0.0')
 
 App({
-  onLaunch: function() {
+  onLaunch: function(options) {
+    console.log(options.scene)
+    if (options.scene === 1129) {
+      this.sitemapHandle()
+    }
+
     wx.BaaS = requirePlugin('sdkPlugin')
 
     wx.BaaS.wxExtend(wx.login,
@@ -69,6 +74,20 @@ App({
         }, 8000);
       } else {
         clearInterval(timeInterval)
+      }
+    })
+  },
+
+  sitemapHandle() { // 1129场景值处理
+    wx.showModal({
+      title: '请先进行注册~',
+      showCancel: false,
+      success(res) {
+        if (res.confirm) {
+          wx.redirectTo({
+            url: '/pages/index/index'
+          })
+        }
       }
     })
   },

@@ -1,0 +1,4 @@
+<!--components/home/button-exam/index.wxml-->
+<button class="restudy-btn" disabled="{{studyExamLock}}" bind:tap="toExam">
+  复习今日单词
+</button>

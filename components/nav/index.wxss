@@ -25,3 +25,18 @@
 .title{
   font-size: 14pt;
 }
+
+
+/* home页导航 */
+.home-nav-wrapper{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #FF9801;
+  color: #fff;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}

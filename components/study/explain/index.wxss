@@ -32,10 +32,6 @@
   color: #8E8B86;
   line-height: 35rpx;
 }
-.vocab{
-  color: #FD0102;
-  font-weight: 700;
-}
 .explain-detail .item{
   padding-top: 50rpx;
 }
@@ -61,7 +57,7 @@
 
 .iconfont{
   font-size: 16pt;
-  color: #FD0102;
+  color: #FE9903;
 }
 
 .run-rotate{
@@ -70,17 +66,14 @@
 
 @keyframes rotate{
   0% {
-		-webkit-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
 		transform: rotate(0deg);
 	}
 	100% {
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
+}
+
+.vocab{
+  color: #FF9801;
+  font-size: 13pt;
 }

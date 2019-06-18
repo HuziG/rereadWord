@@ -1,0 +1,24 @@
+/* components/home/button-nav/index.wxss */
+.button-group{
+  display: flex;
+  justify-content: space-around;
+}
+
+.study-wrapper{
+  text-align: center;
+}
+.start-study-btn{
+  display: inline-block;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10px;
+  background-color: rgba(127, 220, 115, 1) !important;
+  color: rgba(255, 255, 255, 1);
+  font-size: 13px;
+  text-align: center;
+  margin: 0px !important;
+}
+.start-study-btn::after{
+  border: none;
+}
