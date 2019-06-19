@@ -4,6 +4,8 @@ import { StudyModel } from "../../models/studyModel.js";
 const ia = wx.createInnerAudioContext()
 const studyModel = new StudyModel()
 
+var correctVoiceUrl
+
 Page({
 
   data: {
@@ -28,6 +30,10 @@ Page({
         examData: res
       })
       this.renderQuestion(this.data.wordIndex)
+    })
+
+    studyModel.getCorrectVoice().then(res => {
+      correctVoiceUrl = res
     })
   },
 
@@ -104,7 +110,7 @@ Page({
   },
 
   playCorrectVoice() { // 回答正确播放的音效
-    ia.src = 'http://fjdx.sc.chinaz.net/Files/DownLoad/sound1/201801/9677.mp3'
+    ia.src = correctVoiceUrl
     ia.play()
   },
 

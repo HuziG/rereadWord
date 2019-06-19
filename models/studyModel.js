@@ -108,7 +108,7 @@ class StudyModel {
     return value
   }
 
-  // ------------------------------------ TEST -------------------------------------------
+  // ------------------------------------ 2.0.0 -------------------------------------------
 
   getWordSentenceArr(data) {
     let that = this
@@ -155,6 +155,24 @@ class StudyModel {
       })
     })
   } 
+
+  getCorrectVoice() {
+    return new Promise((resolve, reject) => {
+      wx.downloadFile({
+        url: 'https://cloud-minapp-27202.cloud.ifanrusercontent.com/1hd2cNPRQEGkjfPV.mp3',
+        success: (result) => {
+          if (result.statusCode === 200) {
+            resolve(result.tempFilePath)
+          } else {
+            resolve(null)
+          }
+        },
+        fail: () => {
+          resolve(null)
+        }
+      })
+    })
+  }
 }
 
 export {

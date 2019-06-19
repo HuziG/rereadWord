@@ -15,6 +15,8 @@ Page({
   
   onLoad() {
     this.checkUserExist()
+    
+    App.globalData['page_router'] = 'index'
   },
 
   checkUserExist() { // 用户存在检测

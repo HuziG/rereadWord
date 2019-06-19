@@ -9,8 +9,16 @@ Page({
     leftMenuShow: false
   },
 
-  onLoad: function (options) {
+  onLoad: function () {
+    this.checkPageState()
+  },
 
+  checkPageState() {
+    if (!App.globalData['page_router']) {
+      wx.redirectTo({
+        url: '/pages/index/index'
+      })
+    }
   },
 
   showLeftMenu() {
