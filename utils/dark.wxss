@@ -1,0 +1,25 @@
+.dark-page {
+  background-color: #22223a !important;
+}
+
+.dark-color {
+  background-color: #252549 !important;
+  color: #a99dcf !important;
+}
+
+.dark-card {
+  background-color: #282a51 !important;
+}
+
+.dark-text-color {
+  color: #a99dcf !important;
+}
+
+.dark-text-vice-color {
+  color: #999999 !important;
+}
+
+.dark-btn-wrapper {
+  background-color: #5c5c76 !important;
+  color: #fff !important;
+}

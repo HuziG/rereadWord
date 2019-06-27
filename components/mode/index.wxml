@@ -1,10 +1,8 @@
-<!--components/mode/index.wxml-->
+<!-- components/mode/index.wxml -->
 <view class="container">
   <block wx:for="{{modeArr}}" wx:key="*this">
-    <view 
-      class="mode-item" 
-      data-mode="{{item.key}}" 
-      bind:tap="choiceMode"
-    >{{item.name}}</view>
-  </block> 
+    <view class="mode-item dark-text-color" data-mode="{{item.key}}" bind:tap="choiceMode">
+      {{item.name}}
+    </view>
+  </block>
 </view>

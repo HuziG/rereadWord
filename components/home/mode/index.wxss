@@ -1,16 +1,16 @@
 /* components/home/mode/index.wxss */
-.change-mode-wrapper{
+.change-mode-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.title{
+.title {
   font-size: 14pt;
   font-weight: 700;
 }
-.changeModeBtn{
+.changeModeBtn {
   display: inline;
-  background-color: #FF5C63;
+  background-color: #ff5c63;
   color: #fff;
   font-size: 9pt;
   height: 40rpx;
@@ -18,7 +18,7 @@
   padding: 0 10rpx;
   border-radius: 10rpx;
 }
-.mode-title-wrapper{
+.mode-title-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,13 +26,13 @@
   font-size: 11pt;
   padding-top: 30rpx;
 }
-.mode-title-wrapper .r-title{
+.mode-title-wrapper .r-title {
   font-size: 9pt;
 }
-.mode-title-wrapper .l-title{
+.mode-title-wrapper .l-title {
   font-size: 11pt;
 }
 
-.changeModeBtn:active{
-  opacity: .5;
+.changeModeBtn:active {
+  opacity: 0.5;
 }

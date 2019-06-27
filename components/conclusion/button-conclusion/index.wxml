@@ -1,24 +1,9 @@
-<!--components/study/button-conclusion/index.wxml-->
-<view class="container">
-
-  <van-button 
-    round
-    custom-class="defined-btn" 
-    disabled="{{disalbed}}" 
-    type="warning"
-    bind:tap="nextPage" 
-    loading="{{loading}}"
-  >
-    
+<!-- components/study/button-conclusion/index.wxml -->
+<view class="container dark-color">
+  <van-button round custom-class="defined-btn" disabled="{{disalbed}}" type="warning" bind:tap="nextPage" loading="{{loading}}">
     <block wx:if="{{!loading}}">
-      <block wx:if="{{!nextShow}}">
-        请再看下单词吧-{{second}} S
-      </block>
-      <block wx:if="{{nextShow}}">
-        下一步
-      </block>
-    </block> 
-
+      <block wx:if="{{!nextShow}}">请再看下单词吧-{{second}} S</block>
+      <block wx:if="{{nextShow}}">下一步</block>
+    </block>
   </van-button>
-  
 </view>

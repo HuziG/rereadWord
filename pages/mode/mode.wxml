@@ -1,10 +1,9 @@
-<!--pages/mode/mode.wxml-->
+<!-- pages/mode/mode.wxml -->
 <view wx:if="{{navMode === 0}}">
-  <nav-cmp mode="1" title="选择词库"/>
+  <nav-cmp mode="1" title="选择词库" />
 </view>
-
 <view wx:if="{{navMode === 1}}">
-  <nav-cmp mode="2" title="选择词库"/>
+  <nav-cmp mode="2" title="选择词库" />
 </view>
-
-<mode-cmp bind:setMode="setMode"/>
+<view class="page {{skinStyle}}-color"></view>
+<mode-cmp bind:setMode="setMode" dark-text-color="{{skinStyle}}-text-color"/>

@@ -1,13 +1,15 @@
 /* components/study/button-group/index.wxss */
 @import "../button.wxss";
+@import "../../../utils/dark.wxss";
 
-.known{
-  background-color: #07C160;
+.known {
+  background-color: #07c160;
 }
-.pre,.next{
+.pre,
+.next {
   color: #333333;
 }
-.mood-btn-group{
+.mood-btn-group {
   -webkit-animation-duration: 0.75s;
   animation-duration: 0.75s;
   -webkit-animation-name: fadeIn;

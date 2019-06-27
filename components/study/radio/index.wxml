@@ -1,12 +1,9 @@
-<!--components/study/radio/index.wxml-->
-<view class="btn-wrapper voice-wrapper" bind:tap="playHandle">
-
+<!-- components/study/radio/index.wxml -->
+<view class="btn-wrapper voice-wrapper dark-btn-wrapper" bind:tap="playHandle">
   <view wx:if="{{play}}">
-    <view class="iconfont icon-pause"></view>   
+    <view class="iconfont icon-pause"></view>
   </view>
-
   <view wx:if="{{!play}}">
-    <view class="iconfont icon-caret-right"></view>  
+    <view class="iconfont icon-caret-right"></view>
   </view>
-
 </view>

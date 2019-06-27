@@ -1,34 +1,47 @@
 /* pages/study/study.wxss */
-page{
-  background-color: #F6F6F6;
+@import "../../utils/dark.wxss";
+
+page {
+  background-color: #f6f6f6;
 }
-.progress-wrapper{
+
+.page {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.progress-wrapper {
   position: fixed;
   width: 100%;
   left: 0;
 }
-.van-progress{
+.van-progress {
   height: 8rpx !important;
   border-radius: 0px !important;
 }
-.button-group{
+.button-group {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 20rpx 0;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
-.loading-text{
+.loading-text {
   text-align: center;
 }
-.loading-text .loading-title{
+.loading-text .loading-title {
   color: #000;
   font-size: 14pt;
-  animation: fade .8s infinite linear;
+  animation: fade 0.8s infinite linear;
 }
-.loading-text .loading-des{
+.loading-text .loading-des {
   color: #666;
   font-size: 9pt;
   margin-top: 20rpx;

@@ -7,7 +7,7 @@
 
   <block wx:for="{{optionArr}}" wx:key="{{index}}">
     <view 
-      class="option-item {{answerDetail.index === index ? viewHandle.resultRender(answerDetail) : ''}}" 
+      class="option-item {{answerDetail.index === index ? viewHandle.resultRender(answerDetail) : ''}} dark-btn-wrapper" 
       data-index="{{index}}" 
       bind:tap="optionClick"
     >

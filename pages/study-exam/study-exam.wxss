@@ -1,69 +1,81 @@
 /* pages/study-exam/study-exam.wxss */
-@import '../../utils/iconfont.wxss';
+@import "../../utils/iconfont.wxss";
+@import "../../utils/dark.wxss";
 
-page{
-  background-color: #F6F6F6;
+page {
+  background-color: #f6f6f6;
   overflow: hidden;
 }
-.progress-wrapper{
+
+.page {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.progress-wrapper {
   position: fixed;
   width: 100%;
   left: 0;
 }
-.main-container{
+.main-container {
   display: flex;
   flex-direction: column;
   padding-bottom: 32rpx;
   box-sizing: border-box;
   font-size: 15pt;
 }
-.sentence{
+.sentence {
   flex: 7;
   justify-content: center;
 }
-.option-group{
+.option-group {
   flex: 5;
   justify-content: space-around;
 }
-.button-nav-wrapper{
+.button-nav-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 95%;
 }
 
-.flex-center{
+.flex-center {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.skip-btn{
+.skip-btn {
   position: absolute;
   right: 15rpx;
   top: 200rpx;
   border-radius: 5px;
   padding: 10rpx 15rpx;
-  background-color: #FF5C63;
+  background-color: #ff5c63;
   color: rgba(255, 255, 255, 1);
   font-size: 11px;
   text-align: center;
-  box-shadow: 1px 1px 7px 1px rgba(204, 204, 204, 1);
+  /* box-shadow: 1px 1px 7px 1px rgba(204, 204, 204, 1); */
 }
 
-.skip-btn:active{
-  opacity: .5;
+.skip-btn:active {
+  opacity: 0.5;
 }
 
-.loading-text{
+.loading-text {
   text-align: center;
 }
-.loading-text .loading-title{
+.loading-text .loading-title {
   color: #000;
   font-size: 14pt;
-  animation: fade .8s infinite linear;
+  animation: fade 0.8s infinite linear;
 }
-.loading-text .loading-des{
+.loading-text .loading-des {
   color: #666;
   font-size: 9pt;
   margin-top: 20rpx;

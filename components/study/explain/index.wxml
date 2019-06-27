@@ -1,11 +1,9 @@
-<!--components/study/explain/index.wxml-->
-
+<!-- components/study/explain/index.wxml -->
 <view class="container">
-
   <view class="header">
     <view class="word-detail">
-      <view class="word">{{word}}</view>
-      <view class="sound">/{{pron}}/</view>
+      <view class="word dark-text-color">{{word}}</view>
+      <view class="sound dark-text-vice-color">/{{pron}}/</view>
     </view>
     <view class="icon-group">
       <view>
@@ -16,29 +14,24 @@
       </view>
     </view>
   </view>
-
   <view class="explain-detail" wx:if="{{explainShow}}">
     <view class="item">
-      <view class="title">例句</view>
+      <view class="title dark-text-vice-color">例句</view>
       <block wx:for="{{wordSentence}}" wx:key="{{index}}">
-        <view class="sentence-wrapper">
+        <view class="sentence-wrapper  dark-text-color">
           <rich-text class="content" nodes="{{filterAnnotation.getText(item.annotation)}}"></rich-text>
           <view class="sentence-tran">{{item.translation}}</view>
         </view>
       </block>
     </view>
-
     <view class="item">
-      <view class="title">英文释义</view>
-      <rich-text class="content" nodes="{{filterAnnotation.getBr(en_definition)}}"></rich-text>
+      <view class="title dark-text-vice-color">英文释义</view>
+      <rich-text class="content dark-text-color" nodes="{{filterAnnotation.getBr(en_definition)}}"></rich-text>
     </view>
-
     <view class="item">
-      <view class="title">中文释义</view>
-      <view class="content">{{definition}}</view>
+      <view class="title dark-text-vice-color">中文释义</view>
+      <view class="content dark-text-color">{{definition}}</view>
     </view>
   </view>
-
 </view>
-
 <wxs module="filterAnnotation" src="../../../utils/toHtml.wxs"></wxs>

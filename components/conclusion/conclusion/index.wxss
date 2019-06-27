@@ -1,15 +1,27 @@
 /* components/study/conclusion/index.wxss */
-.container{
+@import "../../../utils/dark.wxss";
+
+.page {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.container {
   padding: 0 40rpx;
 }
-.word-item{
+.word-item {
   padding: 15rpx 0rpx;
   border-bottom: 1px dashed #666666;
 }
-.word{
+.word {
   font-size: 16pt;
 }
-.zn{
+.zn {
   font-size: 10pt;
   color: #666666;
 }

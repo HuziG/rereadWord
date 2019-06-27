@@ -20,6 +20,7 @@ Page({
     this.renderView()
     this.drawPoster()
     this.setTodayWord()
+    this.setSkipStyle()
   },
 
   renderView() {
@@ -131,5 +132,11 @@ Page({
     })
 
     wx.setStorageSync('today_word', temData);
+  },
+
+  setSkipStyle() {
+    this.setData({
+      skinStyle: App.globalData.skinStyle
+    })
   }
 })

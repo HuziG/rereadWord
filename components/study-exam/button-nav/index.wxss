@@ -1,17 +1,17 @@
 /* components/study-exam/button-nav/index.wxss */
-@import '../../study/button';
-@import '../../../utils/iconfont';
+@import "../../study/button";
+@import "../../../utils/iconfont";
 
-.voice-btn{
-  background-color: #FF9801;
+.voice-btn {
+  background-color: #ff9801;
 }
-.icon-sound-fill{
-  color: #FFF !important;
+.icon-sound-fill {
+  color: #fff !important;
   font-size: 14pt !important;
 }
-.pre{
+.pre {
   color: #333;
 }
-.next{
+.next {
   color: #333;
 }

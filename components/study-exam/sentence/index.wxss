@@ -1,14 +1,14 @@
 /* components/study-exam/sentence/index.wxss */
-.zn{
+.zn {
   font-size: 12pt;
   margin-top: 15rpx;
 }
 
-.vocab{
+.vocab {
   color: transparent;
-  border-bottom: 2px solid #FF9801;
+  border-bottom: 2px solid #ff9801;
 }
 
-.right .vocab{
-  color: #FF9801;
+.right .vocab {
+  color: #ff9801;
 }

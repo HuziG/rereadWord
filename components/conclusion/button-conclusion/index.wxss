@@ -1,14 +1,16 @@
 /* components/study/button-conclusion/index.wxss */
-.container{
+@import "../../../utils/dark.wxss";
+
+.container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
   padding: 40rpx 34rpx;
 }
-.defined-btn{
+.defined-btn {
   border-radius: 10em !important;
-  background-color: #FF9801;
+  background-color: #ff9801;
   color: #fff;
   width: 80vw;
   height: 80rpx;

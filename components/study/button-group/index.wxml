@@ -1,25 +1,19 @@
-<!--components/study/button-group/index.wxml-->
+<!-- components/study/button-group/index.wxml -->
 <view class="mood-btn-group" wx:if="{{mood === 1}}">
-  <view class="container">
+  <view class="container dark-color">
     <view wx:if="{{preBtnShow}}">
-      <view class="btn-wrapper pre" bind:tap="preHandle">上一个</view>
+      <view class="btn-wrapper pre dark-btn-wrapper" bind:tap="preHandle">上一个</view>
     </view>
-    <view class="btn-wrapper notice" bind:tap="unKnowHandle">不认识</view>
-    <view class="btn-wrapper known" bind:tap="knowHandle">认识</view>
+    <view class="btn-wrapper notice dark-btn-wrapper" bind:tap="unKnowHandle">不认识</view>
+    <view class="btn-wrapper known dark-btn-wrapper" bind:tap="knowHandle">认识</view>
   </view>
 </view>
-
 <view class="mood-btn-group" wx:if="{{mood === 2}}">
-  <view class="container">
-  
+  <view class="container dark-color">
     <view wx:if="{{preBtnShow}}">
-      <view class="btn-wrapper pre" bind:tap="preHandle">上一个</view>
-    </view> 
-
-    <slot></slot> 
-    <view class="btn-wrapper next" bind:tap="nextHandle">下一个</view>
+      <view class="btn-wrapper pre dark-btn-wrapper" bind:tap="preHandle">上一个</view>
+    </view>
+    <slot></slot>
+    <view class="btn-wrapper next dark-btn-wrapper" bind:tap="nextHandle">下一个</view>
   </view>
 </view>
-
-
-

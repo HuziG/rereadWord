@@ -1,26 +1,26 @@
 /* components/home/rember-info/index.wxss */
-.container{
+.container {
   display: flex;
   justify-content: space-around;
   padding: 3.5vh 0;
 }
-.des{
+.des {
   color: #333;
   font-size: 11pt;
 }
-.hasrem{
+.hasrem {
   color: rgba(36, 205, 247, 1);
   font-size: 11pt;
   font-weight: 700;
   text-align: center;
 }
-.todayrem{
+.todayrem {
   color: rgba(151, 237, 152, 1);
   font-size: 11pt;
   font-weight: 700;
   text-align: center;
 }
-.offsetword{
+.offsetword {
   color: rgba(204, 204, 204, 1);
   font-size: 11pt;
   font-weight: 700;

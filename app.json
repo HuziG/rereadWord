@@ -6,8 +6,7 @@
     "pages/user/user",
     "pages/study/study",
     "pages/study-exam/study-exam",
-    "pages/sconclusion/sconclusion",
-    "pages/test/test"
+    "pages/sconclusion/sconclusion"
   ],
   "window": {
     "navigationBarTextStyle": "black",

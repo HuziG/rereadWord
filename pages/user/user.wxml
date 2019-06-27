@@ -3,17 +3,19 @@
 
 <view class="container">
   <view class="item">
-    <view class="title">简单介绍</view>
-    <view class="des">就是爱做产品，爱折腾</view>
+    <view class="title {{skinStyle}}-text-color">简单介绍</view>
+    <view class="des {{skinStyle}}-text-vice-color">就是爱做产品，爱折腾</view>
   </view>
 
   <view class="item">
-    <view class="title">Q群</view>
-    <view class="des">101578706</view>
+    <view class="title {{skinStyle}}-text-color">Q群</view>
+    <view class="des {{skinStyle}}-text-vice-color">101578706</view>
   </view>
 
   <view class="item">
-    <view class="title">联系邮箱</view>
-    <view class="des">ceo-zdj@codesjump.com</view>
+    <view class="title {{skinStyle}}-text-color">联系邮箱</view>
+    <view class="des {{skinStyle}}-text-vice-color">ceo-zdj@codesjump.com</view>
   </view>
 </view>
+
+<view class="page {{skinStyle}}-color"></view>

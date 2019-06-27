@@ -1,7 +1,12 @@
 <!--pages/sconclusion/sconclusion.wxml-->
 <nav-cmp mode="1" title="小结界面" out-class="line"/>
 
-<conclusion-cmp  wordArr="{{wordArr}}"/>
+<conclusion-cmp 
+  wordArr="{{wordArr}}"
+  dark-color="{{skinStyle}}-color"
+  dark-text-color="{{skinStyle}}-text-color"
+  dark-text-vice-color="{{skinStyle}}-text-vice-color"
+/>
 
 <view style="height:160rpx;"></view>
 
@@ -16,5 +21,7 @@
 </van-popup>
 
 <view class="bottom-button">
-  <next-cmp />
+  <next-cmp dark-color="{{skinStyle}}-color"/>
 </view>
+
+<view class="page {{skinStyle}}-color"></view>

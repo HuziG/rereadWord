@@ -1,5 +1,0 @@
-/* pages/test/test.wxss */
-canvas{
-  width:280px;
-  height:400px;
-}

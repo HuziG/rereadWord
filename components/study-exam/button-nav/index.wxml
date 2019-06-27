@@ -1,14 +1,12 @@
-<!--components/study-exam/button-nav/index.wxml-->
+<!-- components/study-exam/button-nav/index.wxml -->
 <view class="mood-btn-group">
   <view class="container">
     <view wx:if="{{preBtnShow}}">
-      <view class="btn-wrapper pre" bind:tap="preHandle">上一个</view>
+      <view class="btn-wrapper pre dark-btn-wrapper" bind:tap="preHandle">上一个</view>
     </view>
-
-    <view class="btn-wrapper voice-btn playAnnotationVoice" bind:tap="playAnnotationVoice">
+    <view class="btn-wrapper voice-btn playAnnotationVoice dark-btn-wrapper" bind:tap="playAnnotationVoice">
       <view class="iconfont icon-sound-fill"></view>
     </view>
-
-    <view class="btn-wrapper next" bind:tap="nextHandle">下一个</view>
+    <view class="btn-wrapper next dark-btn-wrapper" bind:tap="nextHandle">下一个</view>
   </view>
 </view>

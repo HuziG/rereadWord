@@ -1,6 +1,6 @@
 // components/study/button-group/index.js
-
 Component({
+  externalClasses: ['dark-btn-wrapper', 'dark-color'],
   properties: {
     wordIndex: Number
   },
@@ -10,15 +10,15 @@ Component({
   },
 
   observers: {
-    'wordIndex': function (value) {
+    wordIndex: function(value) {
       if (value === 0) {
         this.setData({
           preBtnShow: false
-        })
+        });
       } else {
         this.setData({
           preBtnShow: true
-        })
+        });
       }
     }
   },
@@ -27,25 +27,25 @@ Component({
     unKnowHandle() {
       this.setData({
         mood: this.data.mood === 1 ? 2 : 1
-      })
-      this.triggerEvent('unKnowHandle', {}, {})
+      });
+      this.triggerEvent("unKnowHandle", {}, {});
     },
 
     knowHandle() {
-      wx.vibrateShort()
-      this.triggerEvent('knowHandle', {}, {})
+      wx.vibrateShort();
+      this.triggerEvent("knowHandle", {}, {});
     },
 
     nextHandle() {
-      wx.vibrateShort()
-      this.setData({ mood: 1 })
-      this.triggerEvent('nextHandle', {}, {})
+      wx.vibrateShort();
+      this.setData({ mood: 1 });
+      this.triggerEvent("nextHandle", {}, {});
     },
 
     preHandle() {
-      wx.vibrateShort()
-      this.setData({ mood: 1 }) 
-      this.triggerEvent('preHandle', {}, {})
+      wx.vibrateShort();
+      this.setData({ mood: 1 });
+      this.triggerEvent("preHandle", {}, {});
     }
   }
-})
+});

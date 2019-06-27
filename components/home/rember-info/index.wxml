@@ -1,17 +1,15 @@
-<!--components/home/rember-info/index.wxml-->
+<!-- components/home/rember-info/index.wxml -->
 <view class="container">
   <view class="item">
     <view class="num hasrem">{{remWordNum}}</view>
-    <view class="des">已学单词</view>
+    <view class="des dark-text-vice-color">已学单词</view>
   </view>
-  
   <view class="item">
     <view class="num todayrem">{{todayWordNum}}</view>
-    <view class="des">今日已学单词</view>
+    <view class="des dark-text-vice-color">今日已学单词</view>
   </view>
-
   <view class="item">
     <view class="num offsetword">{{offWord}}</view>
-    <view class="des">剩余单词</view>
+    <view class="des dark-text-vice-color">剩余单词</view>
   </view>
 </view>

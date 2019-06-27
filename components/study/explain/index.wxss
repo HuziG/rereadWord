@@ -1,21 +1,22 @@
 /* components/study/explain/index.wxss */
 @import "../../../utils/iconfont.wxss";
 @import "../../../app.wxss";
+@import "../../../utils/dark.wxss";
 
-.container{
+.container {
   box-sizing: border-box;
   padding: 0 40rpx;
 }
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 30rpx;
 }
-.word-detail{
+.word-detail {
   flex: 8;
 }
-.icon-group{
+.icon-group {
   flex: 4;
   display: flex;
   justify-content: space-around;
@@ -24,56 +25,54 @@
   flex-direction: row;
 }
 
-.word{
+.word {
   font-size: 20pt;
 }
-.sound{
+.sound {
   font-size: 12pt;
-  color: #8E8B86;
+  color: #8e8b86;
   line-height: 35rpx;
 }
-.explain-detail .item{
+.explain-detail .item {
   padding-top: 50rpx;
 }
-.title{
+.title {
   font-size: 10pt;
   color: #999999;
 }
-.content{
+.content {
   font-size: 12pt;
 }
-.sentence-wrapper{
+.sentence-wrapper {
   padding: 15rpx 0;
 }
-.sentence-tran{
+.sentence-tran {
   font-size: 11pt;
 }
 
-.icon-sound-fill:active{
-  opacity: .5;
+.icon-sound-fill:active {
+  opacity: 0.5;
 }
 
-
-
-.iconfont{
+.iconfont {
   font-size: 16pt;
-  color: #FE9903;
+  color: #fe9903;
 }
 
-.run-rotate{
+.run-rotate {
   animation: rotate 2s infinite linear;
 }
 
-@keyframes rotate{
+@keyframes rotate {
   0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.vocab{
-  color: #FF9801;
+.vocab {
+  color: #ff9801;
   font-size: 13pt;
 }

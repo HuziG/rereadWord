@@ -1,4 +1,16 @@
 /* pages/user/user.wxss */
+@import '../../utils/dark';
+
+.page {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
 .nav-class{
   background-color: #FF9801;
   color: #fff;

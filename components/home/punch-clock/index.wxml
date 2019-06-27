@@ -1,8 +1,6 @@
-<!--components/home/punch-clock/index.wxml-->
-<view class="wrapper">
-  <!-- <view class="border"></view> -->
-
-  <view class="text-wrapper">
+<!-- components/home/punch-clock/index.wxml -->
+<view class="wrapper dark-color">
+  <view class="text-wrapper dark-color">
     <view class="t-title">LEARNING DAYS</view>
     <view class="t-title">坚持打卡天数</view>
     <view class="b-title">{{daysNum}}</view>

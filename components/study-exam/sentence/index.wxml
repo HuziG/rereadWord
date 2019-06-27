@@ -1,9 +1,8 @@
-<!--components/study-exam/sentence/index.wxml-->
+<!-- components/study-exam/sentence/index.wxml -->
 <view class="con">
-  <view class="text {{ansRight === true ? 'right' : ''}}">
+  <view class="text {{ansRight === true ? 'right' : ''}} dark-text-color">
     <rich-text nodes="{{filterAnnotation.getText(annotation)}}"></rich-text>
   </view>
-  <view class="zn">{{translation}}</view>
+  <view class="zn dark-text-vice-color">{{translation}}</view>
 </view>
-
 <wxs module="filterAnnotation" src="../../../utils/toHtml.wxs"></wxs>

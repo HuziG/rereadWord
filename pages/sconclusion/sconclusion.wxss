@@ -1,5 +1,16 @@
 /* pages/sconclusion/sconclusion.wxss */
 @import '../../utils/iconfont.wxss';
+@import '../../utils/dark.wxss';
+
+.page {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
 
 .bottom-button{
   position: fixed;

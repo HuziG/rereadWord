@@ -1,14 +1,17 @@
-<!--components/home/left-menu/index.wxml-->
-<view class="container" style="margin-top:{{barHeight + 30}}px;">
+<!-- components/home/left-menu/index.wxml -->
+<view class="container dark-color" style="margin-top:{{barHeight + 30}}px;">
   <view class="avatar">
     <image class="" src="" />
   </view>
-
-  <view class="menu-list">
-    <button open-type="feedback">问题反馈</button>
-    <button open-type="contact">联系客服</button>
-    <button bind:tap="userPageTo">关于我们</button>
+  <view class="menu-list dark-color">
+    <button class="dark-color" open-type="feedback">问题反馈</button>
+    <button class="dark-color" open-type="contact">联系客服</button>
+    <button class="dark-color" bind:tap="userPageTo">关于我们</button>
   </view>
-
-  <view class="footer-tag">@单词复读机</view>
+  <view class="footer-tag" bind:tap="handleSkinStyle">
+    <view class="icon-wrapper">
+      <view class="iconfont {{skinStyle === 'dark' ? 'icon-sun--f' : 'icon-yejian'}}"></view>
+      <view class="dot" wx:if="{{firstSkip}}"></view>
+    </view>
+  </view>
 </view>

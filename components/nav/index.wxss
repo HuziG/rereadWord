@@ -1,12 +1,13 @@
 /* components/nav/index.wxss */
 @import "../../utils/iconfont.wxss";
 @import "../../app.wxss";
+@import "../../utils/dark.wxss";
 
-.flex-wrapper{
+.flex-wrapper {
   display: flex;
   flex-direction: row;
 }
-.main-container{
+.main-container {
   width: 100%;
   position: fixed;
   top: 0;
@@ -17,26 +18,38 @@
   color: #333333;
   background-color: #fff;
 }
-.iconfont{
+.iconfont {
   display: inline;
   font-size: 20pt !important;
   margin-right: 60rpx;
 }
-.title{
+.title {
   font-size: 14pt;
 }
 
-
 /* home页导航 */
-.home-nav-wrapper{
+.home-nav-wrapper {
   width: 100%;
   position: fixed;
   top: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #FF9801;
+  background-color: #ff9801;
   color: #fff;
   padding: 0 32rpx;
   box-sizing: border-box;
+}
+
+.icon-menu{
+  position: relative;
+}
+.dot{
+  position: absolute;
+  top: -2rpx;
+  right: -2rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50px;
+  background-color: #ff4d00;
 }

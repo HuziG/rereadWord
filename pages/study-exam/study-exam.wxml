@@ -1,13 +1,19 @@
 <!--pages/study-exam/study-exam.wxml-->
 <nav-cmp mode="2" title="复习模式" id="navCmp"/>
 
+<view class="page {{skinStyle}}-color"></view>
+
 <view class="progress-wrapper" style="top:{{progressTop}}px;">
-  <van-progress percentage="{{(wordIndex+1) * (100/examData.length)}}" color="#FF9801" show-pivot="{{false}}" custom-class="van-progress" />
+  <van-progress 
+    percentage="{{(wordIndex+1) * (100/examData.length)}}" 
+    color="#FF9801" 
+    show-pivot="{{false}}" 
+    custom-class="van-progress" />
 </view>
 
 <view class="flex-container" wx:if="{{loading}}">
   <view class="flex-container loading-text">
-    <view class="loading-title">组织试题中...</view>
+    <view class="loading-title {{skinStyle}}-text-color">组织试题中...</view>
     <view class="loading-des">如果等待时间过长，可以选择重启应用哦~</view>
   </view>
 </view>
@@ -16,16 +22,31 @@
     <!-- notice：wordArr -->
   <view class="main-container" style="height:{{winHeight - 70}}px;">
     <view class="sentence flex-center">
-      <sentence-cmp annotation="{{annotation}}" translation="{{translation}}" ansRight="{{ansRight}}" />
+      <sentence-cmp 
+        annotation="{{annotation}}" 
+        translation="{{translation}}" 
+        ansRight="{{ansRight}}" 
+        dark-text-color="{{skinStyle}}-text-color"
+        dark-text-vice-color="{{skinStyle}}-text-vice-color"
+      />
     </view>
     <view class="option-group">
       <view style="height: 100%;" wx:if="{{!ansRight}}">
-        <option-group-cmp answer="{{answer}}" bind:ansRightHandle="ansRightHandle" />
+        <option-group-cmp 
+          answer="{{answer}}" 
+          bind:ansRightHandle="ansRightHandle" 
+          dark-btn-wrapper="{{skinStyle}}-btn-wrapper" 
+        />
       </view>
       <view class="button-nav-wrapper" wx:if="{{ansRight}}">
-        <button-nav-cmp wordIndex="{{wordIndex}}" bind:playAnnotationVoice="playAnnotationVoice" bind:nextHandle="nextHandle" bind:preHandle="preHandle" />
+        <button-nav-cmp 
+          wordIndex="{{wordIndex}}" 
+          bind:playAnnotationVoice="playAnnotationVoice" 
+          bind:nextHandle="nextHandle" 
+          bind:preHandle="preHandle" 
+          dark-btn-wrapper="{{skinStyle}}-btn-wrapper" />
       </view>
     </view>
   </view>
-  <view class="skip-btn" style="top:{{progressTop + 15}}px;" bind:tap="nextHandle">这个句子有问题?</view>
+  <view class="skip-btn {{skinStyle}}-btn-wrapper" style="top:{{progressTop + 15}}px;" bind:tap="nextHandle">这个句子有问题?</view>
 </view>

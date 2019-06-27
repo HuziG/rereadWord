@@ -3,6 +3,7 @@ import { StudyModel } from "../../models/studyModel.js";
 
 const ia = wx.createInnerAudioContext()
 const studyModel = new StudyModel()
+const App =  getApp();
 
 var correctVoiceUrl
 
@@ -11,12 +12,14 @@ Page({
   data: {
     winHeight: wx.getSystemInfoSync().windowHeight,
     wordIndex: 0,
-    loading: true
+    loading: true,
+    skinStyle: App.globalData.skinStyle
   },
 
   onLoad: function () {
     this.initData()
     this.setProgressTop()
+    this.setSkipStyle()
   },
 
   onUnload() {
@@ -121,5 +124,11 @@ Page({
         progressTop: rect.height
       })
     }).exec()
+  },
+
+  setSkipStyle() {
+    this.setData({
+      skinStyle: App.globalData.skinStyle
+    })
   }
 })

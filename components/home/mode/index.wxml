@@ -1,15 +1,14 @@
-<!--components/home/mode/index.wxml-->
+<!-- components/home/mode/index.wxml -->
 <view class="container">
   <view class="change-mode-wrapper">
-    <text class="title">学习计划</text>
+    <text class="title dark-text-color">学习计划</text>
     <view class="changeModeBtn" bind:tap="modeTo">修改计划</view>
   </view>
   <view class="mode-title-wrapper">
-    <text class="l-title">{{modeFilter.getLevelName(mode)}}</text>
-    <text class="r-title">10/Day</text>
+    <text class="l-title dark-text-vice-color">{{modeFilter.getLevelName(mode)}}</text>
+    <text class="r-title dark-text-vice-color">10/Day</text>
   </view>
 </view>
-
 <wxs module="modeFilter">
   var  getLevelName = function getLevelName(value) {
     if (value ===  'cet4'){

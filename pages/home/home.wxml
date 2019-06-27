@@ -1,27 +1,33 @@
-<!--pages/home/home.wxml-->
+<!-- pages/home/home.wxml -->
+<view class="page {{skinStyle}}-page"></view>
 
-<nav-cmp mode="5" bind:showLeftMenu="showLeftMenu"/>
+<nav-cmp mode="5" bind:showLeftMenu="showLeftMenu" />
 
-<view class="back-plate"></view>
+<view class="back-plate {{skinStyle}}-color"></view>
 
 <view class="punch-card-wrapper">
-  <punch-clock-cmp />
+  <punch-clock-cmp dark-color="{{skinStyle}}-color"/>
 </view>
 
 <view class="mode-reminfo-wrapper">
-  <view class="model-card">
-    <mode-cmp />
+  <view class="model-card {{skinStyle}}-card">
+    <mode-cmp 
+      dark-text-color="{{skinStyle}}-text-color"
+      dark-text-vice-color="{{skinStyle}}-text-vice-color"/>
   </view>
 
-  <view class="model-card word-progress">
-    <view class="title">单词进度</view>
-    
-    <rember-info-cmp remWordNum="{{remWordNum}}" mode="{{mode}}" />
-    
+  <view class="model-card word-progress {{skinStyle}}-card">
+    <view class="title {{skinStyle}}-text-color">单词进度</view>
+    <rember-info-cmp 
+      remWordNum="{{remWordNum}}" 
+      mode="{{mode}}" 
+      dark-text-vice-color="{{skinStyle}}-text-vice-color"
+    />
     <button-nav-cmp />
   </view>
+
 </view>
 
-<van-popup show="{{ leftMenuShow }}" custom-class="left-menu-wrapper" position="left" bind:close="hideLeftMenu">
-  <left-menu-cmp />
+<van-popup show="{{ leftMenuShow }}" custom-class="left-menu-wrapper {{skinStyle}}-color" position="left" bind:close="hideLeftMenu">
+  <left-menu-cmp skinStyle="{{skinStyle}}" dark-color="{{skinStyle}}-color"/>
 </van-popup>

@@ -1,46 +1,45 @@
-<!--pages/study/study.wxml-->
+<!-- pages/study/study.wxml -->
 <nav-cmp mode="2" title="学习模式" id="navCmp" />
-
+<view class="page {{skinStyle}}-color"></view>
 <view class="progress-wrapper" style="top:{{progressTop}}px;">
   <van-progress percentage="{{(wordIndex+1) * (100/wordArr.length)}}" color="#FF9801" show-pivot="{{false}}" custom-class="van-progress" />
 </view>
-
 <view class="flex-container" wx:if="{{loading}}">
   <view class="flex-container loading-text">
-    <view class="loading-title">组织单词中...</view>
+    <view class="loading-title {{skinStyle}}-text-color">组织单词中...</view>
     <view class="loading-des">如果等待时间过长，可以选择重启应用哦~</view>
   </view>
 </view>
-
 <view wx:if="{{!loading}}">
-  
   <explain-cmp 
     wordCon="{{wordCon}}" 
     explainShow="{{explainShow}}" 
-    redoRotate="{{redoRotate}}"
-    bind:initPlayVoice="initPlayVoice"
-    bind:loopPlayVoice="loopPlayVoice"
-    bind:stopPlayVoice="stopPlayVoice"
-    />
-  
+    redoRotate="{{redoRotate}}" 
+    bind:initPlayVoice="initPlayVoice" 
+    bind:loopPlayVoice="loopPlayVoice" 
+    bind:stopPlayVoice="stopPlayVoice" 
+    dark-text-color="{{skinStyle}}-text-color"
+    dark-text-vice-color="{{skinStyle}}-text-vice-color"
+  />
   <view style="height:140rpx;"></view>
-  
-  <view class="button-group">
+  <view class="button-group {{skinStyle}}-color">
     <button-group-cmp 
       wordIndex="{{wordIndex}}" 
-      bind:unKnowHandle="unKnowHandle"
-      bind:knowHandle="knowHandle"
-      bind:nextHandle="nextHandle"
-      bind:preHandle="preHandle">
-
+      bind:unKnowHandle="unKnowHandle" 
+      bind:knowHandle="knowHandle" 
+      bind:nextHandle="nextHandle" 
+      bind:preHandle="preHandle"
+      dark-btn-wrapper="{{skinStyle}}-btn-wrapper"
+      dark-color="{{skinStyle}}-color"
+    >
       <voice-cmp 
         word="{{wordCon.wordExplatin.content}}" 
-        zn="{{wordCon.wordExplatin.definition}}"
+        zn="{{wordCon.wordExplatin.definition}}" 
         play="{{play}}" 
-        bind:loopPlayVoice="loopPlayVoice"
-        bind:stopPlayVoice="stopPlayVoice"
+        bind:loopPlayVoice="loopPlayVoice" 
+        bind:stopPlayVoice="stopPlayVoice" 
+        dark-btn-wrapper="{{skinStyle}}-btn-wrapper"
       />
-
     </button-group-cmp>
   </view>
 </view>

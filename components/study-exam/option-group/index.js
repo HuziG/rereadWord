@@ -2,7 +2,7 @@
 import { cet6 } from "../../../static/data/cet6.js";
 
 Component({
-  
+  externalClasses: ['dark-btn-wrapper'],
   properties: {
     answer: String
   },

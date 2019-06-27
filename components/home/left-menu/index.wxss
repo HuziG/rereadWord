@@ -1,44 +1,68 @@
 /* components/home/left-menu/index.wxss */
-.container{
+@import "../../../utils/iconfont.wxss";
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 20rpx;
 }
 
-.avatar{
+.avatar {
   width: 150rpx;
   height: 150rpx;
   border-radius: 50px;
   overflow: hidden;
 }
-.avatar image{
+.avatar image {
   width: 150rpx;
   height: 150rpx;
 }
 
-.menu-list{
+.menu-list {
   margin-top: 30rpx;
 }
-.menu-list button{
+.menu-list button {
   background-color: transparent;
   margin: 30rpx 0;
   color: #333;
   font-size: 12pt;
 }
-.menu-list button::after{
+.menu-list button::after {
   outline: none;
   border: none;
 }
-.menu-list button:active{
-  opacity: .5;
+.menu-list button:active {
+  opacity: 0.5;
 }
 
-.footer-tag{
+.footer-tag {
+  width: 100%;
   position: absolute;
-  bottom: 10rpx;
+  bottom: 50rpx;
   left: 50%;
   transform: translateX(-50%);
-  color: #FF9801;
-  font-size: 9pt;
+  color: #ff9801;
+  text-align: center;
+}
+
+.iconfont{
+  font-size: 13pt;
+}
+.icon-wrapper{
+  position: relative;
+  display: inline-block;
+  padding: 10rpx 15rpx;
+  border: 1px solid #ff9801;
+  border-radius: 50px;
+}
+
+.dot{
+  position: absolute;
+  top: -2rpx;
+  right: -2rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50px;
+  background-color: #ff4d00;
 }

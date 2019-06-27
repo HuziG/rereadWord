@@ -1,6 +1,7 @@
 // components/study-exam/sentence/index.js
+
 Component({
-  
+  externalClasses: ['dark-text-vice-color', 'dark-text-color'],
   properties: {
     annotation: String,
     translation: String,
@@ -10,16 +11,10 @@ Component({
     }
   },
 
- 
   data: {
-
   },
 
-  observers: {
-    
-  },
+  observers: {},
 
-  methods: {
-
-  }
-})
+  methods: {}
+});

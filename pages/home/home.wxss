@@ -1,36 +1,47 @@
 /* pages/home/home.wxss */
-page{
+@import "../../utils/dark.wxss";
+
+page {
   box-sizing: border-box;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+}
+.page {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
-.back-plate{
-  background-color: #FF9801;
+.back-plate {
+  background-color: #ff9801;
   height: 70vh;
   border-bottom-right-radius: 60rpx;
   border-bottom-left-radius: 60rpx;
 }
 
-.punch-card-wrapper{
+.punch-card-wrapper {
   position: absolute;
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.model-card{
+.model-card {
   background-color: #fff;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px 1px 6px 1px rgba(204, 204, 204, 1);
   padding: 25rpx;
 }
-.model-card .title{
+.model-card .title {
   font-size: 14pt;
   font-weight: 700;
 }
 
-.mode-reminfo-wrapper{
+.mode-reminfo-wrapper {
   position: absolute;
   width: 100%;
   left: 50%;
@@ -40,11 +51,11 @@ page{
   box-sizing: border-box;
 }
 
-.word-progress{
+.word-progress {
   margin-top: 40rpx;
 }
 
-.left-menu-wrapper{
+.left-menu-wrapper {
   width: 70vw;
   height: 100vh;
 }
