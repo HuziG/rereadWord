@@ -10,6 +10,7 @@ App({
     if (options.scene === 1129) {
       this.sitemapHandle();
     }
+	
 
     wx.BaaS = requirePlugin("sdkPlugin");
 
