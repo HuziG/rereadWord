@@ -2,25 +2,24 @@
 Component({
   externalClasses: ['dark-btn-wrapper', 'dark-color'],
   properties: {
-    wordIndex: Number
+    wordIndex: {
+      type: Number,
+      observer: function (value) {
+        if (value === 0) {
+          this.setData({
+            preBtnShow: false
+          });
+        } else {
+          this.setData({
+            preBtnShow: true
+          });
+        }
+      }
+    }
   },
 
   data: {
     mood: 1
-  },
-
-  observers: {
-    wordIndex: function(value) {
-      if (value === 0) {
-        this.setData({
-          preBtnShow: false
-        });
-      } else {
-        this.setData({
-          preBtnShow: true
-        });
-      }
-    }
   },
 
   methods: {

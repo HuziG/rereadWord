@@ -4,19 +4,18 @@ const App = getApp();
 Component({
   externalClasses: ['dark-btn-wrapper'],
   properties: {
-    wordIndex: Number
-  },
-
-  observers: {
-    wordIndex: function(value) {
-      if (value === 0) {
-        this.setData({
-          preBtnShow: false
-        });
-      } else {
-        this.setData({
-          preBtnShow: true
-        });
+    wordIndex: {
+      type: Number,
+      observer: function (value) {
+        if (value === 0) {
+          this.setData({
+            preBtnShow: false
+          });
+        } else {
+          this.setData({
+            preBtnShow: true
+          });
+        }
       }
     }
   },

@@ -16,7 +16,40 @@ Component({
   properties: {
     remWordNum: Number,
     offWord: Number,
-    mode: String
+    mode: {
+      type: String,
+      observer: function() {
+        if (this.data.mode === "") {
+          return;
+        }
+        let lib = this.data.wordLibrary.find(item => {
+          return item.name === this.data.mode;
+        });
+        let libLength = lib.key.length;
+        let offWord = libLength - this.data.remWordNum;
+        if (offWord <= 0) {
+          wordInfoModel.initWordInfo().then(res => {
+            wx.showModal({
+              title: "提示",
+              content: "太棒了，您已经记完所有单词了",
+              showCancel: false,
+              success(res) {
+                if (res.confirm) {
+                  wx.redirectTo({
+                    url: "/pages/mode/mode"
+                  });
+                }
+              }
+            });
+          });
+        } else {
+          this.setData({
+            offWord
+          });
+          this.triggerEvent("unLock", {});
+        }
+      }
+    }
   },
 
   data: {
@@ -28,40 +61,6 @@ Component({
       { name: "kaoyan_import", key: kaoyan_import },
       { name: "kaoyan", key: kaoyan }
     ]
-  },
-
-  observers: {
-    mode: function() {
-      if (this.data.mode === "") {
-        return;
-      }
-      let lib = this.data.wordLibrary.find(item => {
-        return item.name === this.data.mode;
-      });
-      let libLength = lib.key.length;
-      let offWord = libLength - this.data.remWordNum;
-      if (offWord <= 0) {
-        wordInfoModel.initWordInfo().then(res => {
-          wx.showModal({
-            title: "提示",
-            content: "太棒了，您已经记完所有单词了",
-            showCancel: false,
-            success(res) {
-              if (res.confirm) {
-                wx.redirectTo({
-                  url: "/pages/mode/mode"
-                });
-              }
-            }
-          });
-        });
-      } else {
-        this.setData({
-          offWord
-        });
-        this.triggerEvent("unLock", {});
-      }
-    }
   },
 
   ready() {

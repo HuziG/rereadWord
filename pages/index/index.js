@@ -8,6 +8,8 @@ const App = getApp()
 const userModel = new UserModel()
 const wordInfoModel = new WordInfoModel()
 
+var timeout
+
 Page({
   data: {
     loading: true
@@ -15,6 +17,7 @@ Page({
   
   onLoad() {
     this.checkUserExist()
+    this.loadTooLong()
     
     App.globalData['page_router'] = 'index'
   },
@@ -53,6 +56,28 @@ Page({
         url: '/pages/mode/mode'
       })
     })
+  },
+
+  loadTooLong() {
+    timeout = setTimeout(() => {
+      wx.showModal({
+        content: '启动时间过长,是否需要重启？',
+        showCancel: true,
+        cancelText: '取消',
+        confirmText: '确定',
+        success: (result) => {
+          if(result.confirm){
+            wx.reLaunch({
+              url: '/pages/index/index'
+            })
+          }
+        }
+      })
+    }, 10000);
+  },
+
+  onUnload() {
+    clearTimeout(timeout)
   }
 
 })

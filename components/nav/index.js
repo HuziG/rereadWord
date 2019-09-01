@@ -43,6 +43,12 @@ Component({
       this.setData({
         skinStyle: App.globalData.skinStyle
       })
+    },
+
+    exitTo() {
+      wx.redirectTo({
+        url: '/pages/home/home'
+      })
     }
   }
 });

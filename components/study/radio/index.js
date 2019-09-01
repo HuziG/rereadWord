@@ -2,13 +2,19 @@
 import { StudyModel } from "../../../models/studyModel.js";
 
 const studyModel = new StudyModel();
-const appKey = "6db82689a464b1be";
-const appScrect = "vNTZqKd7cNE6E3khXSdHsNE4MoBgWUr8";
 
 Component({
   externalClasses: ['dark-btn-wrapper'],
   properties: {
-    word: String,
+    word: {
+      type: String,
+      observer: function() {
+        this.setData({
+          voiceUrl: null,
+          play: false
+        });
+      }
+    },
     zn: String,
     play: {
       type: Boolean,
@@ -18,15 +24,6 @@ Component({
 
   data: {
     voiceUrl: null
-  },
-
-  observers: {
-    word: function(value) {
-      this.setData({
-        voiceUrl: null,
-        play: false
-      });
-    }
   },
 
   methods: {

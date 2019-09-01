@@ -1,9 +1,10 @@
 // pages/study-exam/study-exam.js
 import { StudyModel } from "../../models/studyModel.js";
 
-const ia = wx.createInnerAudioContext()
 const studyModel = new StudyModel()
 const App =  getApp();
+const ia = wx.createInnerAudioContext()
+ia.obeyMuteSwitch = false
 
 var correctVoiceUrl
 
@@ -13,26 +14,44 @@ Page({
     winHeight: wx.getSystemInfoSync().windowHeight,
     wordIndex: 0,
     loading: true,
-    skinStyle: App.globalData.skinStyle
+    skinStyle: App.globalData.skinStyle,
+    wordPopup: '*'
   },
 
-  onLoad: function () {
-    this.initData()
+  onLoad: function (options) {
     this.setProgressTop()
     this.setSkipStyle()
+
+    this.handleMode(options)
   },
 
   onUnload() {
     ia.stop()
   },
 
-  initData() { // 初始化渲染信息
-    studyModel.getWordSentenceArr(wx.getStorageSync('today_word').data).then(res => {
+  handleMode(options) { // 不同模式处理
+    let navMode = options.frompage === undefined ? 2 : 4
+    if (options.frompage === undefined) {
+      this.initData(wx.getStorageSync('today_word').data)
+    } else {
+      this.initData(App.globalData.temExamData)
+    }
+    this.setData({
+      navMode
+    })
+  },
+
+  initData(data) { // 初始化渲染信息
+    studyModel.getWordSentenceArr(data).then(res => {
       this.setData({
         loading: false,
         examData: res
       })
       this.renderQuestion(this.data.wordIndex)
+    })
+    
+    this.setData({
+      sourceData: data
     })
 
     studyModel.getCorrectVoice().then(res => {
@@ -53,6 +72,7 @@ Page({
   },
 
   ansRightHandle() { // 正确答案操作
+    this.showCurWord()
     this.playCorrectVoice()
     setTimeout(() => {
       this.setData({
@@ -66,12 +86,23 @@ Page({
     }, 800)
   },
 
+  showCurWord() {
+    let data = this.data.sourceData[this.data.wordIndex]
+    setTimeout(() => {
+      this.setData({
+        curWordInfo: `${data.word}${data.zn}`,
+        wordPopup: ''
+      })
+    }, 700);
+  },
+
   preHandle() { // 上一个
     let temIndex = --this.data.wordIndex
     ia.stop()
     this.setData({
       wordIndex: temIndex,
-      ansRight: false
+      ansRight: false,
+      wordPopup: '*'
     })
     this.renderQuestion(this.data.wordIndex)
   },
@@ -88,7 +119,8 @@ Page({
     ia.stop()
     this.setData({
       wordIndex: temIndex,
-      ansRight: false
+      ansRight: false,
+      wordPopup: '*'
     })
     this.renderQuestion(this.data.wordIndex)
   },
@@ -118,12 +150,14 @@ Page({
   },
 
   setProgressTop() { // 设置progress 的顶部位置
-    let selQuery = wx.createSelectorQuery().in(this)
-    selQuery.select('#navCmp').boundingClientRect((rect) => {
-      this.setData({
-        progressTop: rect.height
-      })
-    }).exec()
+    setTimeout(() => {
+      let selQuery = wx.createSelectorQuery().in(this)
+      selQuery.select('#navCmp').boundingClientRect((rect) => {
+        this.setData({
+          progressTop: rect.height
+        })
+      }).exec()
+    }, 200);
   },
 
   setSkipStyle() {

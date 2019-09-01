@@ -1,5 +1,7 @@
 <!--pages/study-exam/study-exam.wxml-->
-<nav-cmp mode="2" title="复习模式" id="navCmp"/>
+<nav-cmp mode="2" wx:if="{{navMode === 2}}" title="复习模式" id="navCmp"/>
+
+<nav-cmp mode="4" wx:if="{{navMode === 4}}" title="复习模式" id="navCmp" />
 
 <view class="page {{skinStyle}}-color"></view>
 
@@ -49,4 +51,8 @@
     </view>
   </view>
   <view class="skip-btn {{skinStyle}}-btn-wrapper" style="top:{{progressTop + 15}}px;" bind:tap="nextHandle">这个句子有问题?</view>
+</view>
+
+<view class="cur-word-wrapper {{skinStyle}}-btn-wrapper" hidden="{{wordPopup}}">
+  {{curWordInfo}}
 </view>

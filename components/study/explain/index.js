@@ -2,7 +2,30 @@
 Component({
   externalClasses: ['dark-text-color','dark-text-vice-color'],
   properties: {
-    wordCon: Object,
+    wordCon: {
+      type: Object,
+      observer: function(value){
+        console.log(value)
+        if (value === null) {
+          return;
+        }
+
+        this.setData({
+          word: value.wordExplatin.content,
+
+          pron: value.wordExplatin.pron,
+          definition: value.wordExplatin.definition,
+          en_definition: value.wordExplatin.en_definition.defn,
+
+          wordSentence: value.wordSentence,
+
+          redoRotate: false
+        });
+
+        this.stop();
+        this.playVoice();
+      }
+    },
     explainShow: Boolean,
     redoRotate: {
       type: Boolean,
@@ -12,29 +35,6 @@ Component({
 
   data: {
     wordSentence: []
-  },
-
-  observers: {
-    wordCon: function(value) {
-      if (value === null) {
-        return;
-      }
-
-      this.setData({
-        word: value.wordExplatin.content,
-
-        pron: value.wordExplatin.pron,
-        definition: value.wordExplatin.definition,
-        en_definition: value.wordExplatin.en_definition.defn,
-
-        wordSentence: value.wordSentence,
-
-        redoRotate: false
-      });
-
-      this.stop();
-      this.playVoice();
-    }
   },
 
   methods: {

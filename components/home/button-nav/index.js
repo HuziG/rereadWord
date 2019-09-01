@@ -9,14 +9,6 @@ Component({
 
   },
 
-  // observers: {
-  //   'todayWordInfo': function (value) {
-  //     this.setData({
-  //       todayWordInfo: value
-  //     })
-  //   }
-  // },
-
   methods: {
     toStudy() {
       if (this.data.studyBtnLock) { return }

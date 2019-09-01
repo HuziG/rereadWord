@@ -2,7 +2,8 @@
 <!-- mode 0 无任何内容 
       mode 1 标题 导航
         mode 2 返回 + 标题 导航
-          mode 3 home页专属导航 -->
+            mode 4 销毁页面行 导航
+              mode 5 首页 导航-->
 <view wx:if="{{mode != 5}}">
   <view class="main-container  out-class {{skinStyle}}-color" style="padding-top: {{barHeight}}px;">
     <view wx:if="{{mode === 0}}"></view>
@@ -13,8 +14,9 @@
       <view class="iconfont icon-arrowleft" bind:tap="backTo"></view>
       <view class="title">{{title}}</view>
     </view>
-    <view class="flex-wrapper home-nav-wrapper" wx:if="{{mode === 5}}">
-      <view class="iconfont icon-menu"></view>
+    <view class="flex-wrapper" wx:if="{{mode === 4}}">
+      <view class="iconfont icon-close" bind:tap="exitTo"></view>
+      <view class="title">{{title}}</view>
     </view>
   </view>
 </view>

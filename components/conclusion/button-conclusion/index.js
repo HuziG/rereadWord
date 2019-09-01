@@ -40,7 +40,7 @@ Component({
         return;
       }
       wx.redirectTo({
-        url: "/pages/home/home"
+        url: `/pages/study-exam/study-exam?frompage=sconclusion`
       });
     }
   }

@@ -30,6 +30,10 @@ Page({
   },
 
   onLoad: function(options) {
+    wx.setInnerAudioOption({
+      obeyMuteSwitch: false
+    })
+
     this.filterWord();
     this.setProgressTop();
     this.setSkipStyle()
@@ -125,7 +129,7 @@ Page({
       wordCon: this.data.wordArr[index],
       wordIndex: index,
       explainShow: false
-    });
+    })
   },
 
   initPlayVoice(e) {

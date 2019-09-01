@@ -1,9 +1,9 @@
 //app.js
 const App = require("./utils/ald-stat.js").App;
 
-// var bugOut = require("./utils/bugOut.min.js");
-// bugOut.usePlugins = true;
-// bugOut.init(true, "776eb3cf0191f856505673ba8f1e4f38", "2.0.0");
+var bugOut = require("./utils/bugOut.min.js");
+bugOut.usePlugins = true;
+bugOut.init(true, "776eb3cf0191f856505673ba8f1e4f38", "2.0.0");
 
 App({
   onLaunch: function(options) {
@@ -22,9 +22,9 @@ App({
     this.setSkipFirst()
   },
 
-  // onError: function(res) {
-  //   bugOut.track(res);
-  // },
+  onError: function(res) {
+    bugOut.track(res);
+  },
 
   checkUpdate() {
     const updateManager = wx.getUpdateManager();
@@ -89,6 +89,7 @@ App({
   },
 
   globalData: {
-    skinStyle: 'light'
+    skinStyle: 'light',
+    nightCheck: false
   }
 });

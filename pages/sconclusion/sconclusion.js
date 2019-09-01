@@ -126,6 +126,7 @@ Page({
 
   setTodayWord() { // 设置今日已记单词
     let temData = wx.getStorageSync('today_word')
+    App.globalData.temExamData = this.data.wordArr
     
     this.data.wordArr.forEach(item => {
       temData.data.push(item)

@@ -10,13 +10,13 @@
 </view>
 
 <view class="mode-reminfo-wrapper">
-  <view class="model-card {{skinStyle}}-card">
+  <view class="model-card {{skinStyle}}-card {{skinStyle}}-card-shadow">
     <mode-cmp 
       dark-text-color="{{skinStyle}}-text-color"
       dark-text-vice-color="{{skinStyle}}-text-vice-color"/>
   </view>
 
-  <view class="model-card word-progress {{skinStyle}}-card">
+  <view class="model-card word-progress {{skinStyle}}-card {{skinStyle}}-card-shadow">
     <view class="title {{skinStyle}}-text-color">单词进度</view>
     <rember-info-cmp 
       remWordNum="{{remWordNum}}" 
