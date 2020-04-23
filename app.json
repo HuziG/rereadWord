@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mode/mode",
+    "pages/home/home",
+    "pages/user/user",
+    "pages/study/study",
+    "pages/study-exam/study-exam",
+    "pages/sconclusion/sconclusion"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 20000
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "sdkPlugin": {
+      "version": "1.16.0",
+      "provider": "wxc6b86e382a1e3294"
+    }
+	
+  }
+}
