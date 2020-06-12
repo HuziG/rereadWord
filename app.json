@@ -12,9 +12,7 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
-  "requiredBackgroundModes": [
-    "audio"
-  ],
+  "requiredBackgroundModes": ["audio"],
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 20000
@@ -22,9 +20,8 @@
   "sitemapLocation": "sitemap.json",
   "plugins": {
     "sdkPlugin": {
-      "version": "1.16.0",
+      "version": "3.9.0",
       "provider": "wxc6b86e382a1e3294"
     }
-	
   }
 }

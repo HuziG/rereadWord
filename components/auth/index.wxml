@@ -1,15 +1,7 @@
-<!--components/auth/index.wxml-->
+<!-- components/auth/index.wxml -->
 <view class="container">
-  <van-button round 
-    bindgetphonenumber="getPhoneNumber"
-    type="warning"
-    loading="{{loading}}" 
-    open-type="getPhoneNumber"
-    disabled="{{loading}}">
+  <van-button round bind:click="getPhoneNumber" type="warning" loading="{{loading}}" disabled="{{loading}}">
     <text wx:if="{{loading===false}}">立即使用</text>
   </van-button>
-
-  <view class="des">
-    *我们不要您的任何隐私数据，您可以直接使用
-  </view>
+  <view class="des">*我们不要您的任何隐私数据，您可以直接使用</view>
 </view>
